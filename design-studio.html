@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-role="client">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design Studio | Custom Jewelry Designer</title>
+  <meta name="description" content="Client collaboration workspace: customize jewelry, upload files, preview, and submit design requests." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <i class="fa-solid fa-gem" aria-hidden="true"></i>
+        <span class="brand-name">
+          <strong>Custom Jewelry Designer</strong>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="home2.html">Home 2</a>
+        <a data-nav href="collections.html">Collections</a>
+        <a data-nav href="design-studio.html">Design Studio</a>
+        <a data-nav href="pricing.html">Pricing</a>
+        <a data-nav href="dashboard.html">Dashboard</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        </button>
+        <a class="btn small ghost" href="login.html">Login</a>
+        <a class="btn small primary" href="register.html">Register</a>
+        <button id="navToggle" class="icon-btn hamburger" type="button" aria-label="Open menu">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="container mobile-drawer" aria-label="Mobile navigation">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="home2.html">Home 2</a>
+      <a data-nav href="collections.html">Collections</a>
+      <a data-nav href="design-studio.html">Design Studio</a>
+      <a data-nav href="pricing.html">Pricing</a>
+      <a data-nav href="dashboard.html">Dashboard</a>
+      <a data-nav href="contact.html">Contact</a>
+      <div class="divider"></div>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </header>
+
+  <div class="banner" role="banner">
+    <div class="container banner-inner">
+      <div class="eyebrow">Design Studio</div>
+      <h1>Client collaboration workspace</h1>
+      <p class="kicker">Choose type, metal, and gemstone. Add notes, upload references, preview, and submit your request.</p>
+    </div>
+  </div>
+
+  <main id="designStudio">
+    <section class="section tight" aria-label="Jewelry type selector">
+      <div class="container">
+        <div class="eyebrow">Step 1</div>
+        <h2>Jewelry type</h2>
+        <div class="pill-row" style="margin-top:14px;">
+          <button class="pill active" type="button" data-type="Ring">Ring</button>
+          <button class="pill" type="button" data-type="Necklace">Necklace</button>
+          <button class="pill" type="button" data-type="Earrings">Earrings</button>
+          <button class="pill" type="button" data-type="Bracelet">Bracelet</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" aria-label="Metal selection">
+      <div class="container">
+        <div class="eyebrow">Step 2</div>
+        <h2>Metal selection</h2>
+        <p class="kicker">Choose a premium base metal. Your designer will confirm durability and finish options.</p>
+        <div class="pill-row" style="margin-top:14px;">
+          <button class="pill active" type="button" data-metal="Gold">Gold</button>
+          <button class="pill" type="button" data-metal="Platinum">Platinum</button>
+          <button class="pill" type="button" data-metal="Silver">Silver</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" aria-label="Gemstone selector">
+      <div class="container">
+        <div class="eyebrow">Step 3</div>
+        <h2>Gemstone selector</h2>
+        <div class="pill-row" style="margin-top:14px;">
+          <button class="pill active" type="button" data-gem="Diamond">Diamond</button>
+          <button class="pill" type="button" data-gem="Emerald">Emerald</button>
+          <button class="pill" type="button" data-gem="Ruby">Ruby</button>
+          <button class="pill" type="button" data-gem="Sapphire">Sapphire</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" aria-label="Size & Fit">
+      <div class="container">
+        <div class="eyebrow">Step 4</div>
+        <h2>Size & Fit</h2>
+        <p class="kicker">Specify measurements for perfect fit. Our designer will verify and confirm sizing.</p>
+        <div class="grid cols-2" style="margin-top:16px;">
+          <div class="card pad">
+            <div class="field">
+              <label for="ringSize">Ring Size (US)</label>
+              <select id="ringSize">
+                <option value="">Select size</option>
+                <option value="4">4</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+          </div>
+          <div class="card pad">
+            <div class="field">
+              <label for="length">Length/Dimensions</label>
+              <input id="length" type="text" placeholder="e.g., 18 inches chain, 7 inch bracelet" />
+              <div class="helper">Specify custom length or dimensions if applicable</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" aria-label="Design notes and uploads">
+      <div class="container">
+        <div class="eyebrow">Step 5</div>
+        <h2>Design notes & uploads</h2>
+        <div class="grid cols-2" style="margin-top:16px;">
+          <div class="card pad">
+            <div class="field">
+              <label for="designNotes">Design notes</label>
+              <textarea id="designNotes" placeholder="Describe style, size, stone shape, engraving, budget, deadlines..."></textarea>
+              <div class="helper">Tip: include ring size, preferred metal tone, and inspiration references.</div>
+            </div>
+          </div>
+          <div class="card pad">
+            <div class="field">
+              <label for="designUpload">Upload references</label>
+              <input id="designUpload" type="file" multiple />
+              <div class="helper">Images show a preview immediately. Other files are listed by name.</div>
+            </div>
+            <div class="divider"></div>
+            <div id="uploadPreview" class="preview-wrap">
+              <p class="helper">No files selected.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" aria-label="Budget & Timeline">
+      <div class="container">
+        <div class="eyebrow">Step 6</div>
+        <h2>Budget & Timeline</h2>
+        <p class="kicker">Set your budget range and preferred delivery timeline. We'll work within your constraints.</p>
+        <div class="grid cols-2" style="margin-top:16px;">
+          <div class="card pad">
+            <div class="field">
+              <label for="budget">Budget Range</label>
+              <select id="budget">
+                <option value="">Select budget range</option>
+                <option value="500-1000">$500 - $1,000</option>
+                <option value="1000-2500">$1,000 - $2,500</option>
+                <option value="2500-5000">$2,500 - $5,000</option>
+                <option value="5000-10000">$5,000 - $10,000</option>
+                <option value="10000+">$10,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="card pad">
+            <div class="field">
+              <label for="timeline">Timeline</label>
+              <select id="timeline">
+                <option value="">Select timeline</option>
+                <option value="2-4 weeks">2-4 weeks</option>
+                <option value="4-6 weeks">4-6 weeks</option>
+                <option value="6-8 weeks">6-8 weeks</option>
+                <option value="8-12 weeks">8-12 weeks</option>
+                <option value="12+ weeks">12+ weeks</option>
+              </select>
+              <div class="helper">Complex designs may require additional time</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Live preview UI">
+      <div class="container">
+        <div class="eyebrow">Preview</div>
+        <h2>Live preview</h2>
+        <p class="kicker">A lightweight visual preview to validate your direction before you submit.</p>
+        <div class="grid cols-2" style="margin-top:16px; align-items:start;">
+          <div class="preview" aria-label="Preview canvas">
+            <svg viewBox="0 0 520 300" role="img" aria-label="Jewelry preview">
+              <defs>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <rect x="0" y="0" width="520" height="300" fill="transparent" />
+              <ellipse id="svgMetal" cx="260" cy="190" rx="160" ry="64" fill="#d6b46a" opacity="0.95" />
+              <ellipse cx="260" cy="190" rx="130" ry="48" fill="rgba(0,0,0,0.30)" />
+              <circle id="svgGem" cx="260" cy="140" r="44" fill="#f2f2f4" filter="url(#glow)" />
+              <circle cx="260" cy="140" r="18" fill="rgba(255,255,255,0.35)" />
+            </svg>
+          </div>
+          <div class="card pad">
+            <span class="badge"><i class="fa-solid fa-eye" aria-hidden="true"></i> Preview</span>
+            <h3 id="previewLabel">Gold Ring • Diamond</h3>
+            <p>This preview updates from your selections and is saved locally as a draft for convenience.</p>
+            <div class="divider"></div>
+            <div class="preview-meta">
+              <span class="badge"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Auto-saved draft</span>
+              <span class="badge"><i class="fa-solid fa-lock" aria-hidden="true"></i> Local-only</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Submit design request">
+      <div class="container">
+        <div class="card pad" style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
+          <div class="eyebrow">Final step</div>
+          <h2>Submit design request</h2>
+          <p class="kicker">Submitting creates a request visible in the Dashboard (and in Admin/Designer mode for review).</p>
+          <div class="hero-actions">
+            <button id="submitDesign" class="btn primary" type="button"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Submit Request</button>
+            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>Go to Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h3>Custom Jewelry Designer</h3>
+          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.</p>
+          <div class="social" aria-label="Social links">
+            <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
+            <a href="contact.html" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="contact.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="home2.html">Home 2</a>
+          <a href="collections.html">Collections</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+        <div>
+          <h3>Services</h3>
+          <a href="design-studio.html">Design Studio</a>
+          <a href="dashboard.html">Client Dashboard</a>
+          <a href="contact.html">Appointments</a>
+          <a href="pricing.html">Payment Stages</a>
+        </div>
+        <div>
+          <h3>Designer Support</h3>
+          <a href="dashboard.html">Requests</a>
+          <a href="dashboard.html">Approvals</a>
+          <a href="dashboard.html">File Management</a>
+          <a href="contact.html">Help Center</a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="fineprint">
+        <div>
+          <a class="link" href="privacy.html">Privacy</a>
+          <span> | </span>
+          <a class="link" href="terms.html">Terms</a>
+          <span> | </span>
+          <a class="link" href="refund.html">Refund Policy</a>
+        </div>
+        <div class="payments" aria-label="Secure payment icons">
+          <span><i class="fa-brands fa-cc-visa" aria-hidden="true"></i> Visa</span>
+          <span><i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i> Mastercard</span>
+          <span><i class="fa-brands fa-cc-amex" aria-hidden="true"></i> AmEx</span>
+          <span><i class="fa-brands fa-cc-paypal" aria-hidden="true"></i> PayPal</span>
+        </div>
+        <div>© <span id="year">2026</span> Custom Jewelry Designer. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
