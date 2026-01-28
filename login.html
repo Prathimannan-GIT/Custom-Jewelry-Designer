@@ -10,55 +10,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/premium-header.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Home">
+  <header class="premium-header">
+    <!-- LEFT ZONE - BRAND -->
+    <div class="header-brand">
+      <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
-        <span class="brand-name">
-          <strong>Custom Jewelry Designer</strong>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a data-nav href="index.html">Home</a>
-        <a data-nav href="home2.html">Home 2</a>
-        <a data-nav href="collections.html">Collections</a>
-        <a data-nav href="design-studio.html">Design Studio</a>
-        <a data-nav href="pricing.html">Pricing</a>
-        <a data-nav href="dashboard.html">Dashboard</a>
-        <a data-nav href="contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">
-          <i class="fa-solid fa-sun" aria-hidden="true"></i>
-        </button>
-        <a class="btn small primary" href="login.html">Login</a>
-        <a class="btn small ghost" href="register.html">Register</a>
-        <button id="navToggle" class="icon-btn hamburger" type="button" aria-label="Open menu">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
+      </div>
+      <div class="brand-text">
+        <strong>Custom Jewelry Designer</strong>
       </div>
     </div>
 
-    <div class="container mobile-drawer" aria-label="Mobile navigation">
-      <a data-nav href="index.html">Home</a>
-      <a data-nav href="home2.html">Home 2</a>
-      <a data-nav href="collections.html">Collections</a>
-      <a data-nav href="design-studio.html">Design Studio</a>
-      <a data-nav href="pricing.html">Pricing</a>
-      <a data-nav href="dashboard.html">Dashboard</a>
-      <a data-nav href="contact.html">Contact</a>
-      <div class="divider"></div>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
+    <!-- CENTER ZONE - MAIN NAVIGATION -->
+    <nav class="header-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link"><i class="fa-solid fa-home" aria-hidden="true"></i> Home</a>
+    </nav>
+
+    <!-- RIGHT ZONE - USER ACTIONS -->
+    <div class="header-actions">
+      <a href="login.html" class="btn-primary">Login</a>
+      <a href="register.html" class="btn-outline">Register</a>
     </div>
+
+    <!-- MOBILE HAMBURGER -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </header>
 
+  <!-- MOBILE SLIDE-IN MENU -->
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <div class="brand-badge">
+          <i class="fa-solid fa-gem" aria-hidden="true"></i>
+        </div>
+        <div class="brand-text">
+          <strong>Custom Jewelry Designer</strong>
+        </div>
+        <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+      <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="mobile-nav-link"><i class="fa-solid fa-home" aria-hidden="true"></i> Home</a>
+      </nav>
+      <div class="mobile-menu-actions">
+        <a href="login.html" class="btn-primary mobile-btn">Login</a>
+        <a href="register.html" class="btn-outline mobile-btn">Register</a>
+      </div>
+    </div>
+  </div>
+
   <main>
-    <div class="container" style="padding: 54px 0;">
+    <div class="container" style="padding: 134px 0 54px 0;">
       <div class="grid cols-2" style="align-items:start;">
         <div class="card pad">
           <div class="eyebrow">Welcome back</div>
@@ -159,6 +169,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
