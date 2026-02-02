@@ -19,7 +19,6 @@
 <body class="interior-page">
 
   <header class="premium-header">
-    <!-- LEFT ZONE - BRAND -->
     <a href="index.html" class="header-brand">
       <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
@@ -28,9 +27,6 @@
         <strong>Custom Jewelry Designer</strong>
       </div>
     </a>
-
-
-    <!-- CENTER ZONE - MAIN NAVIGATION -->
     <nav class="header-nav" role="navigation" aria-label="Main navigation">
       <a href="index.html" class="nav-link">Home</a>
       <a href="home2.html" class="nav-link">Home 2</a>
@@ -41,8 +37,6 @@
       <a href="contact.html" class="nav-link">Contact</a>
       <a href="dashboard.html" class="nav-link">Dashboard</a>
     </nav>
-
-    <!-- RIGHT ZONE - USER ACTIONS -->
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle theme">
         <i class="fa-solid fa-sun" aria-hidden="true"></i>
@@ -51,9 +45,6 @@
       <a href="login.html" class="btn-outline">Login</a>
       <a href="register.html" class="btn-primary">Register</a>
     </div>
-
-
-    <!-- MOBILE HAMBURGER -->
     <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
@@ -61,128 +52,37 @@
     </button>
   </header>
 
-  <!-- MOBILE SLIDE-IN MENU -->
-  <div class="mobile-menu-overlay">
-    <div class="mobile-menu-panel">
-      <div class="mobile-menu-header">
-        <div class="brand-badge">
-          <i class="fa-solid fa-gem" aria-hidden="true"></i>
-        </div>
-        <div class="brand-text">
-          <strong>Custom Jewelry Designer</strong>
-        </div>
-        <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
-          <i class="fa-solid fa-times"></i>
-        </button>
-      </div>
-      <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="home2.html" class="mobile-nav-link">Home 2</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="services.html" class="mobile-nav-link">Services</a>
-        <a href="collections.html" class="mobile-nav-link">Gallery</a>
-        <a href="pricing.html" class="mobile-nav-link active">Pricing</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
-      </nav>
-      <div class="mobile-menu-actions">
-        <a href="login.html" class="btn-outline mobile-btn">Login</a>
-        <a href="register.html" class="btn-primary mobile-btn">Register</a>
-      </div>
-    </div>
-  </div>
-
   <div class="banner" role="banner">
-
-    <div class="container banner-inner">
+    <div class="container banner-inner" style="text-align: center;">
       <div class="eyebrow">Pricing</div>
       <h1>Transparent stages, premium outcomes</h1>
-      <p class="kicker">Front-end pricing UI with clear policies. Final quotes are confirmed after your consultation and
-        concept review.</p>
+      <p class="kicker">Front-end pricing UI with clear policies. Final quotes are confirmed after consultation.</p>
     </div>
   </div>
 
   <main>
-    <section class="section" aria-label="Design consultation">
-      <div class="container">
-        <div class="eyebrow">Stage 1</div>
-        <h2>Design consultation</h2>
-        <div class="grid cols-2" style="margin-top:16px;">
-          <div class="card pad">
-            <h3>What you get</h3>
-            <p>Guided intake, references review, timeline estimate, and an initial concept direction.</p>
-          </div>
-          <div class="card pad">
-            <h3>Typical range</h3>
-            <p>Consultation fees vary by complexity and are applied to your final project.</p>
-            <a class="btn" href="contact.html"><i class="fa-solid fa-calendar" aria-hidden="true"></i>Book
-              appointment</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Custom jewelry pricing">
+    <section class="section">
       <div class="container">
         <div class="eyebrow">Base pricing</div>
-        <h2>Custom jewelry pricing</h2>
-        <p class="kicker">Pricing depends on metal weight, gemstone selection, complexity, and finishing.</p>
-        <div class="grid cols-3" style="margin-top:16px;">
-          <div class="card pad">
+        <h2 style="text-align: center;">Custom jewelry tiers</h2>
+        <div class="grid cols-3" style="margin-top:24px;">
+          <div class="card pad" style="text-align: center;">
             <h3>Essential</h3>
             <p>Minimal design complexity and classic settings.</p>
             <div class="divider"></div>
-            <span class="badge"><i class="fa-solid fa-tag" aria-hidden="true"></i>Best for first custom piece</span>
+            <span class="badge">Starting from $1,500</span>
           </div>
-          <div class="card pad">
+          <div class="card pad" style="text-align: center;">
             <h3>Signature</h3>
-            <p>More customization, refined silhouette, premium finishing.</p>
+            <p>Refined silhouette and premium finishing.</p>
             <div class="divider"></div>
-            <span class="badge"><i class="fa-solid fa-crown" aria-hidden="true"></i>Most popular</span>
+            <span class="badge">Starting from $3,500</span>
           </div>
-          <div class="card pad">
+          <div class="card pad" style="text-align: center;">
             <h3>Atelier</h3>
-            <p>Complex settings, multiple stones, engraving, and advanced craft.</p>
+            <p>Complex settings and advanced craft.</p>
             <div class="divider"></div>
-            <span class="badge"><i class="fa-solid fa-gem" aria-hidden="true"></i>Highest craftsmanship</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Material cost breakdown">
-      <div class="container">
-        <div class="eyebrow">Costs</div>
-        <h2>Material cost breakdown</h2>
-        <div class="grid cols-2" style="margin-top:16px;">
-          <div class="card pad">
-            <h3>Metals</h3>
-            <p>Gold, platinum, and silver price varies by weight and purity.</p>
-          </div>
-          <div class="card pad">
-            <h3>Gemstones</h3>
-            <p>Diamond and colored stones vary by cut, clarity, color, and carat.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Revision policy">
-      <div class="container">
-        <div class="eyebrow">Policy</div>
-        <h2>Revision policy</h2>
-        <div class="grid cols-3" style="margin-top:16px;">
-          <div class="card pad">
-            <h3>Concept revisions</h3>
-            <p>Request refinements before approval to ensure the design aligns with your vision.</p>
-          </div>
-          <div class="card pad">
-            <h3>Clarity milestones</h3>
-            <p>Each milestone is confirmed in the Dashboard with written notes and approvals.</p>
-          </div>
-          <div class="card pad">
-            <h3>Changes after approval</h3>
-            <p>Major changes after approval may affect timeline and cost depending on stage.</p>
+            <span class="badge">Starting from $7,500</span>
           </div>
         </div>
       </div>
@@ -190,52 +90,50 @@
 
     <section class="section" aria-label="Payment stages">
       <div class="container">
-        <div class="eyebrow">Payments</div>
-        <h2>Payment stages (frontend UI)</h2>
-        <p class="kicker">Toggle stages to see progress update. Values are stored locally for demo purposes.</p>
-        <div id="payments" class="grid cols-2" style="margin-top:16px; align-items:start;">
+        <div class="eyebrow">Progress</div>
+        <h2 style="text-align: center;">Payment stages flow</h2>
+        <div id="payments" class="grid cols-2" style="margin-top:24px; align-items:start;">
           <div class="card pad">
             <h3>Stages</h3>
             <div class="checkbox-group" style="margin-top:10px;">
               <input type="checkbox" id="stage1" data-stage="s1" />
-              <label for="stage1">Deposit (reserve production slot)</label>
+              <label for="stage1">Deposit (reserve slot)</label>
             </div>
             <div class="checkbox-group">
               <input type="checkbox" id="stage2" data-stage="s2" />
-              <label for="stage2">Fabrication (after concept approval)</label>
+              <label for="stage2">Fabrication (start creation)</label>
             </div>
             <div class="checkbox-group">
               <input type="checkbox" id="stage3" data-stage="s3" />
               <label for="stage3">Final balance (before delivery)</label>
             </div>
-
           </div>
-          <div class="card pad">
-            <h3>Progress</h3>
-            <div class="progress" aria-label="Payment progress">
-              <div id="paymentBar"></div>
+          <div class="card pad" style="text-align: center;">
+            <h3>Current Progress</h3>
+            <div class="progress" style="height: 12px; margin-top: 15px;">
+              <div id="paymentBar"
+                style="height: 100%; width: 0%; background: var(--gold); border-radius: 99px; transition: width 0.3s var(--ease);">
+              </div>
             </div>
-            <div class="helper" id="paymentLabel" style="margin-top:10px;">0% complete</div>
+            <div class="helper" id="paymentLabel" style="margin-top:15px; font-weight: 600;">0% complete</div>
             <div class="divider"></div>
-            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>View in
-              dashboard</a>
+            <a class="btn primary small" href="dashboard.html" style="width: 100%;">View Workflow</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-label="Start project CTA">
+    <section class="section">
       <div class="container">
         <div class="card pad"
-          style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
+          style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03)); text-align: center; padding: 60px 40px;">
           <div class="eyebrow">Start</div>
           <h2>Start your project</h2>
-          <p class="kicker">Create a request in the Design Studio, then manage it end-to-end in your Dashboard.</p>
-          <div class="hero-actions">
+          <p class="kicker">Create a request in the Design Studio to receive a tailored quote.</p>
+          <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
             <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
                 aria-hidden="true"></i>Design Studio</a>
-            <a class="btn" href="dashboard.html"><i class="fa-solid fa-check" aria-hidden="true"></i>Approvals &
-              Payments</a>
+            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>Dashboard</a>
           </div>
         </div>
       </div>
@@ -283,9 +181,7 @@
           <a href="contact.html">Help Center</a>
         </div>
       </div>
-
       <div class="divider"></div>
-
       <div class="fineprint">
         <div>
           <a class="link" href="privacy.html">Privacy</a>
@@ -304,10 +200,10 @@
       </div>
     </div>
   </footer>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
   <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>

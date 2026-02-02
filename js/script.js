@@ -1,123 +1,123 @@
 /* Custom Jewelry Designer – Vanilla JS Interactions */
 
-(function(){
+(function () {
   "use strict";
 
-  function $(sel, root){ return (root || document).querySelector(sel); }
-  function $all(sel, root){ return Array.from((root || document).querySelectorAll(sel)); }
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $all(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
 
-  function safeJsonParse(raw, fallback){
-    try{ return JSON.parse(raw); }catch(_e){ return fallback; }
+  function safeJsonParse(raw, fallback) {
+    try { return JSON.parse(raw); } catch (_e) { return fallback; }
   }
 
-  function getPageName(){
+  function getPageName() {
     var path = (location.pathname || "").split("/").pop();
     return path || "index.html";
   }
 
-  function setActiveLinks(){
+  function setActiveLinks() {
     var current = getPageName();
-    if(current === 'admin-dashboard.html') current = 'dashboard.html';
-    $all('a[data-nav]').forEach(function(a){
+    if (current === 'admin-dashboard.html') current = 'dashboard.html';
+    $all('a[data-nav]').forEach(function (a) {
       var href = (a.getAttribute('href') || "").split("#")[0];
       a.classList.toggle('active', href === current);
     });
   }
 
-  function initNav(){
+  function initNav() {
     var toggle = $('#navToggle');
-    if(toggle){
-      toggle.addEventListener('click', function(){
+    if (toggle) {
+      toggle.addEventListener('click', function () {
         document.body.classList.toggle('nav-open');
       });
     }
 
-    $all('.mobile-drawer a').forEach(function(a){
-      a.addEventListener('click', function(){
+    $all('.mobile-drawer a').forEach(function (a) {
+      a.addEventListener('click', function () {
         document.body.classList.remove('nav-open');
       });
     });
 
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
         document.body.classList.remove('nav-open');
         document.body.classList.remove('sidebar-open');
       }
     });
   }
 
-  function initTheme(){
+  function initTheme() {
     var root = document.documentElement;
     var btn = $('#themeToggle');
-    var stored = localStorage.getItem('aa_theme');
-    if(stored){ root.setAttribute('data-theme', stored); }
+    var stored = localStorage.getItem('theme');
+    if (stored) { root.setAttribute('data-theme', stored); }
 
-    function updateIcon(){
-      if(!btn) return;
+    function updateIcon() {
+      if (!btn) return;
       var theme = root.getAttribute('data-theme') || 'dark';
       var icon = btn.querySelector('i');
-      if(icon){
+      if (icon) {
         icon.className = theme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
       }
     }
 
     updateIcon();
 
-    if(btn){
-      btn.addEventListener('click', function(){
+    if (btn) {
+      btn.addEventListener('click', function () {
         var current = root.getAttribute('data-theme') || 'dark';
         var next = current === 'light' ? 'dark' : 'light';
         root.setAttribute('data-theme', next);
-        localStorage.setItem('aa_theme', next);
+        localStorage.setItem('theme', next);
         updateIcon();
-        toast('Theme updated', 'info');
+        if (window.toast) toast('Theme updated to ' + next, 'info');
       });
     }
   }
 
-  function ensureToastStack(){
+  function ensureToastStack() {
     var stack = $('.toast-stack');
-    if(stack) return stack;
+    if (stack) return stack;
     stack = document.createElement('div');
     stack.className = 'toast-stack';
     document.body.appendChild(stack);
     return stack;
   }
 
-  function toast(title, type){
+  function toast(title, type) {
     var stack = ensureToastStack();
     var el = document.createElement('div');
     el.className = 'toast';
     var icon = 'fa-gem';
-    if(type === 'success') icon = 'fa-circle-check';
-    if(type === 'warn') icon = 'fa-triangle-exclamation';
-    if(type === 'error') icon = 'fa-circle-xmark';
+    if (type === 'success') icon = 'fa-circle-check';
+    if (type === 'warn') icon = 'fa-triangle-exclamation';
+    if (type === 'error') icon = 'fa-circle-xmark';
 
     el.innerHTML =
       '<i class="fa-solid ' + icon + '"></i>' +
       '<div>' +
-        '<strong>' + escapeHtml(title) + '</strong>' +
-        '<p>' + escapeHtml(messageForType(type)) + '</p>' +
+      '<strong>' + escapeHtml(title) + '</strong>' +
+      '<p>' + escapeHtml(messageForType(type)) + '</p>' +
       '</div>';
 
     stack.appendChild(el);
-    setTimeout(function(){
+    setTimeout(function () {
       el.style.opacity = '0';
       el.style.transform = 'translateY(6px)';
     }, 3200);
-    setTimeout(function(){
-      if(el && el.parentNode) el.parentNode.removeChild(el);
+    setTimeout(function () {
+      if (el && el.parentNode) el.parentNode.removeChild(el);
     }, 3600);
   }
 
-  function messageForType(type){
-    if(type === 'success') return 'Saved successfully.';
-    if(type === 'warn') return 'Please review the details.';
-    if(type === 'error') return 'Something went wrong.';
+  function messageForType(type) {
+    if (type === 'success') return 'Saved successfully.';
+    if (type === 'warn') return 'Please review the details.';
+    if (type === 'error') return 'Something went wrong.';
     return 'Custom Jewelry Designer is ready.';
   }
 
-  function escapeHtml(str){
+  function escapeHtml(str) {
     return String(str)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
@@ -126,32 +126,32 @@
       .replace(/'/g, '&#39;');
   }
 
-  function initLinkButtons(){
-    $all('[data-link]').forEach(function(btn){
-      btn.addEventListener('click', function(){
+  function initLinkButtons() {
+    $all('[data-link]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
         var href = btn.getAttribute('data-link');
-        if(href) location.href = href;
+        if (href) location.href = href;
       });
     });
   }
 
-  function initValidation(){
-    $all('form[data-validate]').forEach(function(form){
-      form.addEventListener('submit', function(e){
+  function initValidation() {
+    $all('form[data-validate]').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
         var required = $all('[required]', form);
         var ok = true;
-        required.forEach(function(el){
+        required.forEach(function (el) {
           var v = (el.value || '').trim();
-          if(!v){
+          if (!v) {
             ok = false;
             el.focus();
             el.style.borderColor = 'rgba(214,180,106,0.55)';
-          }else{
+          } else {
             el.style.borderColor = '';
           }
         });
 
-        if(!ok){
+        if (!ok) {
           e.preventDefault();
           toast('Please complete required fields', 'warn');
           return;
@@ -163,30 +163,38 @@
     });
   }
 
-  function initSidebar(){
+  function initSidebar() {
     var btn = $('#sidebarToggle');
-    if(!btn) return;
-    btn.addEventListener('click', function(){
+    if (!btn) return;
+    btn.addEventListener('click', function () {
       document.body.classList.toggle('sidebar-open');
     });
 
-    $all('.sidebar-nav a').forEach(function(a){
-      a.addEventListener('click', function(){
-        $all('.sidebar-nav a').forEach(function(x){ x.classList.remove('active'); });
+    $all('.sidebar-nav a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        $all('.sidebar-nav a').forEach(function (x) { x.classList.remove('active'); });
         a.classList.add('active');
 
         var target = a.getAttribute('data-target');
-        if(target){
+        if (target) {
           var el = document.getElementById(target);
-          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Close dashboard sidebar on mobile
+        var sidebar = $('#dashSidebar');
+        var overlay = $('#dashOverlay');
+        if (sidebar && sidebar.classList.contains('open')) {
+          sidebar.classList.remove('open');
+          if (overlay) overlay.classList.remove('active');
         }
       });
     });
   }
 
-  function initConfigurator(){
+  function initConfigurator() {
     var studio = $('#designStudio');
-    if(!studio) return;
+    if (!studio) return;
 
     var typeBtns = $all('[data-type]', studio);
     var metalBtns = $all('[data-metal]', studio);
@@ -203,97 +211,97 @@
 
     var key = 'aa_design_draft';
     var stored = safeJsonParse(localStorage.getItem(key), null);
-    if(stored){ state = Object.assign(state, stored); }
+    if (stored) { state = Object.assign(state, stored); }
 
-    function setActive(group, value, attr){
-      group.forEach(function(btn){
+    function setActive(group, value, attr) {
+      group.forEach(function (btn) {
         btn.classList.toggle('active', btn.getAttribute(attr) === value);
       });
     }
 
-    function metalColor(m){
-      if(m === 'Platinum') return '#cfd4da';
-      if(m === 'Silver') return '#c6cdd6';
+    function metalColor(m) {
+      if (m === 'Platinum') return '#cfd4da';
+      if (m === 'Silver') return '#c6cdd6';
       return '#d6b46a';
     }
 
-    function gemColor(g){
-      if(g === 'Emerald') return '#2fbf71';
-      if(g === 'Ruby') return '#e54557';
-      if(g === 'Sapphire') return '#3b6ef6';
+    function gemColor(g) {
+      if (g === 'Emerald') return '#2fbf71';
+      if (g === 'Ruby') return '#e54557';
+      if (g === 'Sapphire') return '#3b6ef6';
       return '#f2f2f4';
     }
 
-    function render(){
+    function render() {
       setActive(typeBtns, state.type, 'data-type');
       setActive(metalBtns, state.metal, 'data-metal');
       setActive(gemBtns, state.gem, 'data-gem');
 
-      if(notes) notes.value = state.notes;
+      if (notes) notes.value = state.notes;
 
       var label = $('#previewLabel');
-      if(label) label.textContent = state.metal + ' ' + state.type + ' • ' + state.gem;
+      if (label) label.textContent = state.metal + ' ' + state.type + ' • ' + state.gem;
 
       var metalEl = $('#svgMetal');
       var gemEl = $('#svgGem');
-      if(metalEl) metalEl.setAttribute('fill', metalColor(state.metal));
-      if(gemEl) gemEl.setAttribute('fill', gemColor(state.gem));
+      if (metalEl) metalEl.setAttribute('fill', metalColor(state.metal));
+      if (gemEl) gemEl.setAttribute('fill', gemColor(state.gem));
 
       localStorage.setItem(key, JSON.stringify(state));
     }
 
-    typeBtns.forEach(function(btn){
-      btn.addEventListener('click', function(){
+    typeBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
         state.type = btn.getAttribute('data-type');
         render();
       });
     });
 
-    metalBtns.forEach(function(btn){
-      btn.addEventListener('click', function(){
+    metalBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
         state.metal = btn.getAttribute('data-metal');
         render();
       });
     });
 
-    gemBtns.forEach(function(btn){
-      btn.addEventListener('click', function(){
+    gemBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
         state.gem = btn.getAttribute('data-gem');
         render();
       });
     });
 
-    if(notes){
-      notes.addEventListener('input', function(){
+    if (notes) {
+      notes.addEventListener('input', function () {
         state.notes = notes.value;
         render();
       });
     }
 
-    if(upload){
-      upload.addEventListener('change', function(){
+    if (upload) {
+      upload.addEventListener('change', function () {
         var list = $('#uploadPreview');
-        if(!list) return;
+        if (!list) return;
         list.innerHTML = '';
 
         var files = Array.from(upload.files || []);
-        if(!files.length){
+        if (!files.length) {
           list.innerHTML = '<p class="helper">No files selected.</p>';
           return;
         }
 
-        files.forEach(function(f){
+        files.forEach(function (f) {
           var row = document.createElement('div');
           row.className = 'card pad';
           row.style.boxShadow = 'none';
           row.style.background = 'rgba(255,255,255,0.03)';
 
           var title = document.createElement('div');
-          title.innerHTML = '<strong>' + escapeHtml(f.name) + '</strong><div class="helper">' + Math.round(f.size/1024) + ' KB</div>';
+          title.innerHTML = '<strong>' + escapeHtml(f.name) + '</strong><div class="helper">' + Math.round(f.size / 1024) + ' KB</div>';
 
           row.appendChild(title);
 
-          if(f.type && f.type.indexOf('image/') === 0){
+          if (f.type && f.type.indexOf('image/') === 0) {
             var img = document.createElement('img');
             img.alt = 'Upload preview';
             img.style.marginTop = '10px';
@@ -311,11 +319,11 @@
     }
 
     var submit = $('#submitDesign');
-    if(submit){
-      submit.addEventListener('click', function(){
+    if (submit) {
+      submit.addEventListener('click', function () {
         var queue = safeJsonParse(localStorage.getItem('aa_requests'), []);
         queue.unshift({
-          id: 'REQ-' + Math.floor(Date.now()/1000),
+          id: 'REQ-' + Math.floor(Date.now() / 1000),
           createdAt: new Date().toISOString(),
           summary: state.metal + ' ' + state.type + ' with ' + state.gem,
           status: 'New'
@@ -328,9 +336,9 @@
     render();
   }
 
-  function initMessaging(){
+  function initMessaging() {
     var box = $('#messages');
-    if(!box) return;
+    if (!box) return;
 
     var list = $('#messageList');
     var form = $('#messageForm');
@@ -338,22 +346,22 @@
 
     var key = 'aa_messages';
 
-    function load(){
+    function load() {
       return safeJsonParse(localStorage.getItem(key), [
-        {from:'Designer', text:'Welcome. Share your vision and references here.', ts: Date.now() - 1000*60*60}
+        { from: 'Designer', text: 'Welcome. Share your vision and references here.', ts: Date.now() - 1000 * 60 * 60 }
       ]);
     }
 
-    function save(items){
+    function save(items) {
       localStorage.setItem(key, JSON.stringify(items));
     }
 
-    function render(){
+    function render() {
       var items = load();
-      if(!list) return;
+      if (!list) return;
       list.innerHTML = '';
 
-      items.slice(0, 30).reverse().forEach(function(m){
+      items.slice(0, 30).reverse().forEach(function (m) {
         var row = document.createElement('div');
         row.className = 'card pad';
         row.style.boxShadow = 'none';
@@ -361,21 +369,21 @@
         row.innerHTML = '<div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">' +
           '<strong>' + escapeHtml(m.from) + '</strong>' +
           '<span class="helper">' + new Date(m.ts).toLocaleString() + '</span>' +
-        '</div>' +
-        '<div class="divider"></div>' +
-        '<p style="margin:0;color:var(--muted);">' + escapeHtml(m.text) + '</p>';
+          '</div>' +
+          '<div class="divider"></div>' +
+          '<p style="margin:0;color:var(--muted);">' + escapeHtml(m.text) + '</p>';
         list.appendChild(row);
       });
     }
 
-    if(form){
-      form.addEventListener('submit', function(e){
+    if (form) {
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        if(!input) return;
+        if (!input) return;
         var text = (input.value || '').trim();
-        if(!text){ toast('Write a message first', 'warn'); return; }
+        if (!text) { toast('Write a message first', 'warn'); return; }
         var items = load();
-        items.push({from:'Client', text:text, ts: Date.now()});
+        items.push({ from: 'Client', text: text, ts: Date.now() });
         save(items);
         input.value = '';
         render();
@@ -386,34 +394,34 @@
     render();
   }
 
-  function initApprovals(){
+  function initApprovals() {
     var box = $('#approvals');
-    if(!box) return;
+    if (!box) return;
 
     var key = 'aa_approvals';
     var statusEl = $('#approvalStatus');
 
-    function get(){
+    function get() {
       return localStorage.getItem(key) || 'Pending';
     }
 
-    function set(v){
+    function set(v) {
       localStorage.setItem(key, v);
-      if(statusEl) statusEl.textContent = v;
+      if (statusEl) statusEl.textContent = v;
     }
 
     var approve = $('#approveBtn');
     var revise = $('#reviseBtn');
 
-    if(approve){
-      approve.addEventListener('click', function(){
+    if (approve) {
+      approve.addEventListener('click', function () {
         set('Approved');
         toast('Concept approved', 'success');
       });
     }
 
-    if(revise){
-      revise.addEventListener('click', function(){
+    if (revise) {
+      revise.addEventListener('click', function () {
         set('Revision Requested');
         toast('Revision requested', 'info');
       });
@@ -422,38 +430,38 @@
     set(get());
   }
 
-  function initPayments(){
+  function initPayments() {
     var box = $('#payments');
-    if(!box) return;
+    if (!box) return;
 
     var key = 'aa_payment_stages';
     var stages = $all('input[data-stage]');
     var bar = $('#paymentBar');
     var label = $('#paymentLabel');
 
-    function load(){
-      return safeJsonParse(localStorage.getItem(key), {s1:false,s2:false,s3:false});
+    function load() {
+      return safeJsonParse(localStorage.getItem(key), { s1: false, s2: false, s3: false });
     }
 
-    function save(data){ localStorage.setItem(key, JSON.stringify(data)); }
+    function save(data) { localStorage.setItem(key, JSON.stringify(data)); }
 
-    function render(){
+    function render() {
       var data = load();
-      stages.forEach(function(cb){
+      stages.forEach(function (cb) {
         var k = cb.getAttribute('data-stage');
         cb.checked = !!data[k];
       });
 
       var total = stages.length;
-      var done = stages.filter(function(cb){ return cb.checked; }).length;
-      var pct = Math.round((done/Math.max(1,total)) * 100);
+      var done = stages.filter(function (cb) { return cb.checked; }).length;
+      var pct = Math.round((done / Math.max(1, total)) * 100);
 
-      if(bar) bar.style.width = pct + '%';
-      if(label) label.textContent = pct + '% complete';
+      if (bar) bar.style.width = pct + '%';
+      if (label) label.textContent = pct + '% complete';
     }
 
-    stages.forEach(function(cb){
-      cb.addEventListener('change', function(){
+    stages.forEach(function (cb) {
+      cb.addEventListener('change', function () {
         var data = load();
         var k = cb.getAttribute('data-stage');
         data[k] = cb.checked;
@@ -466,18 +474,18 @@
     render();
   }
 
-  function initRequestsTable(){
+  function initRequestsTable() {
     var table = $('#requestTableBody');
-    if(!table) return;
+    if (!table) return;
 
     var items = safeJsonParse(localStorage.getItem('aa_requests'), []);
-    if(!items.length){
+    if (!items.length) {
       table.innerHTML = '<tr><td colspan="4" class="helper">No requests yet. Create one in Design Studio.</td></tr>';
       return;
     }
 
     table.innerHTML = '';
-    items.slice(0, 6).forEach(function(r){
+    items.slice(0, 6).forEach(function (r) {
       var tr = document.createElement('tr');
       tr.innerHTML = '<td>' + escapeHtml(r.id) + '</td>' +
         '<td>' + escapeHtml(r.summary) + '</td>' +
@@ -485,8 +493,8 @@
         '<td><button class="btn small" data-act="approve">Approve</button></td>';
 
       var btn = tr.querySelector('button');
-      if(btn){
-        btn.addEventListener('click', function(){
+      if (btn) {
+        btn.addEventListener('click', function () {
           localStorage.setItem('aa_approvals', 'Approved');
           toast('Approved from dashboard', 'success');
         });
@@ -496,21 +504,21 @@
     });
   }
 
-  function initRoleSwitch(){
+  function initRoleSwitch() {
     var sw = $('#roleSwitch');
-    if(!sw) return;
+    if (!sw) return;
 
     var key = 'aa_role';
     var stored = localStorage.getItem(key) || 'client';
 
-    function apply(role){
+    function apply(role) {
       localStorage.setItem(key, role);
       document.documentElement.setAttribute('data-role', role);
       var label = $('#roleLabel');
-      if(label) label.textContent = role === 'admin' ? 'Admin / Designer Mode' : 'Client Mode';
+      if (label) label.textContent = role === 'admin' ? 'Admin / Designer Mode' : 'Client Mode';
     }
 
-    sw.addEventListener('change', function(){
+    sw.addEventListener('change', function () {
       apply(sw.checked ? 'admin' : 'client');
       toast('Dashboard view updated', 'info');
     });
@@ -519,27 +527,27 @@
     apply(stored);
   }
 
-  function initNotifications(){
+  function initNotifications() {
     var list = $('#notificationList');
-    if(!list) return;
+    if (!list) return;
 
     var key = 'aa_notifications';
 
-    function seedIfEmpty(){
+    function seedIfEmpty() {
       var existing = safeJsonParse(localStorage.getItem(key), null);
-      if(existing && Array.isArray(existing) && existing.length) return;
+      if (existing && Array.isArray(existing) && existing.length) return;
       var seed = [
-        {title:'Consultation booked', body:'Your consultation is scheduled. Add reference images in Design Studio.', ts: Date.now() - 1000*60*30},
-        {title:'Designer update', body:'A new concept draft is ready for review in Approvals.', ts: Date.now() - 1000*60*120},
-        {title:'Payment milestone', body:'The deposit stage is available in Payments.', ts: Date.now() - 1000*60*240}
+        { title: 'Consultation booked', body: 'Your consultation is scheduled. Add reference images in Design Studio.', ts: Date.now() - 1000 * 60 * 30 },
+        { title: 'Designer update', body: 'A new concept draft is ready for review in Approvals.', ts: Date.now() - 1000 * 60 * 120 },
+        { title: 'Payment milestone', body: 'The deposit stage is available in Payments.', ts: Date.now() - 1000 * 60 * 240 }
       ];
       localStorage.setItem(key, JSON.stringify(seed));
     }
 
-    function render(){
+    function render() {
       var items = safeJsonParse(localStorage.getItem(key), []);
       list.innerHTML = '';
-      items.slice(0, 6).forEach(function(n){
+      items.slice(0, 6).forEach(function (n) {
         var row = document.createElement('div');
         row.className = 'card pad';
         row.style.boxShadow = 'none';
@@ -556,7 +564,7 @@
     render();
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', function () {
     window.toast = toast;
 
     setActiveLinks();

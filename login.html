@@ -16,74 +16,66 @@
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
 
-<body>
-
+<body class="auth-body">
 
   <div class="auth-page">
     <div class="auth-side-image" style="background-image: url('assets/images/luxury_jewelry_auth_bg.png');">
-
-      <a href="index.html" class="header-brand">
-        <div class="brand-badge">
-          <i class="fa-solid fa-gem" aria-hidden="true"></i>
-        </div>
-        <div class="brand-text">
-          <strong>Custom Jewelry Designer</strong>
-        </div>
-      </a>
-      <div class="auth-side-content">
-        <h2>"Jewelry is more than adornment; it's a legacy of moments."</h2>
-        <p>— Handcrafted with precision, tailored to your unique story.</p>
+      <div class="auth-side-content" style="text-align: center; padding: 40px;">
+        <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; line-height: 1.2;">"Jewelry
+          is more than adornment; it's a legacy of moments."</h2>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 20px;">— Handcrafted with precision, tailored to your story.
+        </p>
       </div>
     </div>
 
-    <div class="auth-form-container">
-      <div class="eyebrow">Welcome back</div>
-      <h2>Login to your studio</h2>
-      <p>Login to manage designs, messaging, approvals, and payments.</p>
+    <div class="auth-form-container"
+      style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
+      <a href="index.html" class="header-brand" style="margin-bottom: 40px; text-decoration: none;">
+        <div class="brand-badge"
+          style="background: var(--gold); color: white; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; margin-left: auto; margin-right: auto;">
+          <i class="fa-solid fa-gem" style="font-size: 24px;"></i>
+        </div>
+        <div class="brand-text" style="color: var(--text); font-weight: 700; font-size: 1.2rem; text-align: center;">
+          Custom Jewelry Designer
+        </div>
+      </a>
 
-      <form class="form" data-validate style="margin-top: 30px;">
+      <div class="eyebrow" style="text-align: center;">Welcome back</div>
+      <h2 style="text-align: center; margin-bottom: 10px;">Login to your studio</h2>
+      <p style="text-align: center; color: var(--muted); margin-bottom: 30px;">Manage designs, messaging, and approvals.
+      </p>
+
+      <form class="form" data-validate style="width: 100%; max-width: 400px;">
         <div class="field">
           <label for="email">Email address</label>
-          <div style="position:relative;">
-            <i class="fa-solid fa-envelope"
-              style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
-            <input id="email" type="email" required placeholder="you@example.com" style="padding-left:40px;" />
-          </div>
+          <input id="email" type="email" required placeholder="you@example.com" />
         </div>
         <div class="field">
           <label for="password">Password</label>
-          <div style="position:relative;">
-            <i class="fa-solid fa-lock"
-              style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
-            <input id="password" type="password" required placeholder="••••••••" style="padding-left:40px;" />
-            <i class="fa-solid fa-eye"
-              style="position:absolute; right:14px; top:50%; transform:translateY(-50%); color:var(--muted); cursor:pointer;"></i>
-          </div>
+          <input id="password" type="password" required placeholder="••••••••" />
         </div>
-        <div class="split">
-          <div class="checkbox-group" style="margin:0;">
+        <div class="split" style="margin-bottom: 20px;">
+          <div class="checkbox-group">
             <input type="checkbox" id="rememberMe" />
             <label for="rememberMe">Remember me</label>
           </div>
-
-          <div style="display:flex;justify-content:flex-end;align-items:center;">
-            <a class="link" href="contact.html" style="font-size:13px;">Forgot password?</a>
-          </div>
+          <a class="link" href="contact.html">Forgot?</a>
         </div>
-        <button class="btn primary" type="submit" style="width:100%; margin-top:10px;">
-          <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Sign in
-        </button>
+        <button class="btn primary" type="submit" style="width:100%;"><i class="fa-solid fa-right-to-bracket"></i> Sign
+          in</button>
       </form>
 
-      <div class="divider" style="margin: 30px 0;"><span>Or continue with</span></div>
+      <div class="divider" style="margin: 30px 0; width: 100%; max-width: 400px;"><span>Or continue with</span></div>
 
-      <div class="grid cols-2">
-        <button class="btn" style="width:100%"><i class="fa-brands fa-google"></i> Google</button>
-        <button class="btn" style="width:100%"><i class="fa-brands fa-facebook"></i> Facebook</button>
+      <div class="grid cols-2" style="width: 100%; max-width: 400px; gap: 12px;">
+        <button class="btn" style="width:100%"><i class="fa-brands fa-google" style="color: var(--gold);"></i>
+          Google</button>
+        <button class="btn" style="width:100%"><i class="fa-brands fa-facebook" style="color: var(--gold);"></i>
+          Facebook</button>
       </div>
 
       <p style="margin-top: 40px; text-align: center;">
-        Don't have an account? <a href="register.html" class="link">Create an account</a>
+        Don't have an account? <a href="register.html" class="link">Get started</a>
       </p>
     </div>
   </div>

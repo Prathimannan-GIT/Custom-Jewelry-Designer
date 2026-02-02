@@ -20,7 +20,6 @@
 <body class="interior-page">
 
   <header class="premium-header">
-    <!-- LEFT ZONE - BRAND -->
     <a href="index.html" class="header-brand">
       <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
@@ -29,9 +28,6 @@
         <strong>Custom Jewelry Designer</strong>
       </div>
     </a>
-
-
-    <!-- CENTER ZONE - MAIN NAVIGATION -->
     <nav class="header-nav" role="navigation" aria-label="Main navigation">
       <a href="index.html" class="nav-link">Home</a>
       <a href="home2.html" class="nav-link">Home 2</a>
@@ -42,8 +38,6 @@
       <a href="contact.html" class="nav-link active">Contact</a>
       <a href="dashboard.html" class="nav-link">Dashboard</a>
     </nav>
-
-    <!-- RIGHT ZONE - USER ACTIONS -->
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle theme">
         <i class="fa-solid fa-sun" aria-hidden="true"></i>
@@ -52,9 +46,6 @@
       <a href="login.html" class="btn-outline">Login</a>
       <a href="register.html" class="btn-primary">Register</a>
     </div>
-
-
-    <!-- MOBILE HAMBURGER -->
     <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
@@ -62,96 +53,50 @@
     </button>
   </header>
 
-  <!-- MOBILE SLIDE-IN MENU -->
-  <div class="mobile-menu-overlay">
-    <div class="mobile-menu-panel">
-      <div class="mobile-menu-header">
-        <div class="brand-badge">
-          <i class="fa-solid fa-gem" aria-hidden="true"></i>
-        </div>
-        <div class="brand-text">
-          <strong>Custom Jewelry Designer</strong>
-        </div>
-        <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
-          <i class="fa-solid fa-times"></i>
-        </button>
-      </div>
-      <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="home2.html" class="mobile-nav-link">Home 2</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="services.html" class="mobile-nav-link">Services</a>
-        <a href="collections.html" class="mobile-nav-link">Gallery</a>
-        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
-        <a href="contact.html" class="mobile-nav-link active">Contact</a>
-        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
-      </nav>
-      <div class="mobile-menu-actions">
-        <a href="login.html" class="btn-outline mobile-btn">Login</a>
-        <a href="register.html" class="btn-primary mobile-btn">Register</a>
-      </div>
-    </div>
-  </div>
-
   <div class="banner" role="banner">
-
-    <div class="container banner-inner">
+    <div class="container banner-inner" style="text-align: center;">
       <div class="eyebrow">Contact</div>
       <h1>Talk to the atelier</h1>
-      <p class="kicker">Request a consultation, ask about materials, or get help with your dashboard workflow.</p>
+      <p class="kicker">Request a consultation or get help with your design request.</p>
     </div>
   </div>
 
   <main>
-    <section class="section" aria-label="Contact form">
+    <section class="section">
       <div class="container">
         <div class="eyebrow">Message</div>
-        <h2>Contact form</h2>
-        <div class="grid cols-2" style="margin-top:16px; align-items:start;">
+        <h2 style="text-align: center;">Send a request</h2>
+        <div class="grid cols-2" style="margin-top:24px; align-items:start;">
           <div class="card pad">
             <form class="form" data-validate>
-              <div class="split">
-                <div class="field">
-                  <label for="cName">Full name</label>
-                  <input id="cName" required placeholder="Your name" />
-                </div>
-                <div class="field">
-                  <label for="cEmail">Email</label>
-                  <input id="cEmail" type="email" required placeholder="you@example.com" />
-                </div>
+              <div class="field">
+                <label for="cName">Full name</label>
+                <input id="cName" required placeholder="Your name" />
               </div>
               <div class="field">
-                <label for="cTopic">Topic</label>
-                <select id="cTopic" required>
-                  <option value="">Select</option>
-                  <option>New custom project</option>
-                  <option>Pricing & payment stages</option>
-                  <option>Materials & sourcing</option>
-                  <option>Support</option>
-                </select>
+                <label for="cEmail">Email</label>
+                <input id="cEmail" type="email" required placeholder="you@example.com" />
               </div>
               <div class="field">
                 <label for="cMsg">Message</label>
-                <textarea id="cMsg" required
-                  placeholder="Tell us about your project, timeline, and preferences..."></textarea>
+                <textarea id="cMsg" required placeholder="Tell us about your project..."></textarea>
               </div>
-              <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Send
-                message</button>
+              <button class="btn primary" type="submit" style="width: 100%;"><i class="fa-solid fa-paper-plane"
+                  aria-hidden="true"></i>Send message</button>
             </form>
           </div>
-          <div class="card pad">
-            <h3>Direct support</h3>
-            <p>For faster assistance, include your request ID from the Dashboard.</p>
+          <div class="card pad" style="text-align: center;">
+            <h3>Direct Support</h3>
+            <p>Our concierge team is available for immediate assistance.</p>
             <div class="divider"></div>
-            <div class="preview-meta">
-              <span class="badge"><i class="fa-solid fa-envelope"
-                  aria-hidden="true"></i>support@aurum-atelier.example</span>
-              <span class="badge"><i class="fa-solid fa-phone" aria-hidden="true"></i>+00 0000 000 000</span>
-              <span class="badge"><i class="fa-solid fa-clock" aria-hidden="true"></i>Mon–Sat, 10am–6pm</span>
+            <p style="font-weight: 600; color: var(--gold);">support@aurum-atelier.example</p>
+            <p>+1 555-0123</p>
+            <div class="divider"></div>
+            <div class="social" style="justify-content: center;">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <div class="divider"></div>
-            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>Open
-              Dashboard</a>
           </div>
         </div>
       </div>
@@ -160,120 +105,13 @@
     <section class="section" aria-label="Studio location map">
       <div class="container">
         <div class="eyebrow">Location</div>
-        <h2>Studio location map</h2>
-        <div class="card">
-          <div id="map" style="height: 400px; width: 100%; border-radius: 8px; position: relative; z-index: 1;"></div>
-          <div class="card-header">
-            <h3>Visit our studio</h3>
-            <p>123 Jewelry Lane, New York, NY 10001<br>Open Monday-Saturday, 10am-6pm</p>
-            <div class="preview-meta">
-              <span class="badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Manhattan, NY</span>
-              <span class="badge"><i class="fa-solid fa-clock" aria-hidden="true"></i>Mon-Sat 10am-6pm</span>
-              <span class="badge"><i class="fa-solid fa-phone" aria-hidden="true"></i>+1 555-0123</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Appointment booking">
-      <div class="container">
-        <div class="eyebrow">Appointments</div>
-        <h2>Appointment booking</h2>
-        <div class="grid cols-3" style="margin-top:16px;">
-          <div class="card pad">
-            <h3>Virtual consultation</h3>
-            <p>Perfect for moodboards, sizing, and initial direction.</p>
-            <button class="btn" type="button" data-link="login.html"><i class="fa-solid fa-calendar"
-                aria-hidden="true"></i>Book</button>
-          </div>
-          <div class="card pad">
-            <h3>In-studio visit</h3>
-            <p>View materials, try sizing, and review sample finishes.</p>
-            <button class="btn" type="button" data-link="login.html"><i class="fa-solid fa-location-dot"
-                aria-hidden="true"></i>Book</button>
-          </div>
-          <div class="card pad">
-            <h3>Priority review</h3>
-            <p>For time-sensitive projects and milestone planning.</p>
-            <button class="btn" type="button" data-link="pricing.html"><i class="fa-solid fa-bolt"
-                aria-hidden="true"></i>See stages</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Support information">
-      <div class="container">
-        <div class="eyebrow">Support</div>
-        <h2>Support information</h2>
-        <div class="grid cols-2" style="margin-top:16px;">
-          <div class="card pad">
-            <h3>Client support</h3>
-            <p>Help with design requests, approvals, and payments.</p>
-            <a class="link" href="dashboard.html">Go to your dashboard</a>
-          </div>
-          <div class="card pad">
-            <h3>Designer support</h3>
-            <p>Admin/designer workflow guidance for requests and approvals.</p>
-            <a class="link" href="dashboard.html">Open dashboard (toggle admin)</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="FAQs">
-      <div class="container">
-        <div class="eyebrow">FAQs</div>
-        <h2>Frequently asked questions</h2>
-        <div class="grid cols-2" style="margin-top:16px;">
-          <div class="card pad">
-            <h3>How many revisions can I request?</h3>
-            <p>Use the dashboard approvals panel to request refinements before final approval.</p>
-          </div>
-          <div class="card pad">
-            <h3>How do payments work?</h3>
-            <p>Payments are staged. Track progress in Pricing or in your Dashboard Payments section.</p>
-          </div>
-          <div class="card pad">
-            <h3>Can I upload reference images?</h3>
-            <p>Yes. Design Studio supports file upload preview for images and lists other files.</p>
-          </div>
-          <div class="card pad">
-            <h3>How do I approve a concept?</h3>
-            <p>Open Dashboard → Approvals and select Approve or Request revision.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Social links">
-      <div class="container">
-        <div class="eyebrow">Social</div>
-        <h2>Social links</h2>
-        <div class="grid cols-2" style="margin-top:16px; align-items:center;">
-          <div class="card pad">
-            <h3>Follow the atelier</h3>
-            <p>Inspiration, behind-the-scenes craft, and new collection drops.</p>
-            <div class="social" aria-label="Social icons">
-              <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram"
-                  aria-hidden="true"></i></a>
-              <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest"
-                  aria-hidden="true"></i></a>
-              <a href="contact.html" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-              <a href="contact.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="card pad"
-            style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
-            <h3>Start a request</h3>
-            <p>Create a design request and collaborate with your designer.</p>
-            <div class="hero-actions">
-              <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
-                  aria-hidden="true"></i>Design Studio</a>
-              <a class="btn" href="collections.html"><i class="fa-solid fa-layer-group"
-                  aria-hidden="true"></i>Collections</a>
-            </div>
+        <h2 style="text-align: center;">Visit our studio</h2>
+        <div class="card" style="overflow: hidden; margin-top: 24px;">
+          <div id="map" style="height: 400px; width: 100%; position: relative; z-index: 1;"></div>
+          <div class="card-header" style="text-align: center; padding: 30px;">
+            <h3>New York Atelier</h3>
+            <p>123 Jewelry Lane, Manhattan, NY 10001</p>
+            <span class="badge" style="margin-top: 10px;">Mon–Sat, 10am–6pm</span>
           </div>
         </div>
       </div>
@@ -321,9 +159,7 @@
           <a href="contact.html">Help Center</a>
         </div>
       </div>
-
       <div class="divider"></div>
-
       <div class="fineprint">
         <div>
           <a class="link" href="privacy.html">Privacy</a>
@@ -342,56 +178,20 @@
       </div>
     </div>
   </footer>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    // Initialize the map
     document.addEventListener('DOMContentLoaded', function () {
-      // Set the initial coordinates (Manhattan, NY)
-      const studioLat = 40.7580;
-      const studioLng = -73.9855;
-
-      // Create the map
-      const map = L.map('map').setView([studioLat, studioLng], 15);
-
-      // Add OpenStreetMap tiles
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
-
-      // Add a custom marker for the jewelry studio
+      const map = L.map('map').setView([40.7580, -73.9855], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
       const customIcon = L.divIcon({
-        html: '<div style="background: linear-gradient(135deg, #d6b46a, #8b7355); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"><i class="fa-solid fa-gem" style="font-size: 18px;"></i></div>',
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
-        popupAnchor: [0, -20],
+        html: '<div style="background: var(--gold); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: var(--shadow);"><i class="fa-solid fa-gem" style="font-size: 14px;"></i></div>',
         className: 'custom-marker'
       });
-
-      // Add marker with popup
-      const marker = L.marker([studioLat, studioLng], { icon: customIcon }).addTo(map);
-      marker.bindPopup(`
-        <div style="text-align: center; padding: 8px;">
-          <strong>Custom Jewelry Designer</strong><br>
-          123 Jewelry Lane<br>
-          New York, NY 10001<br>
-          <a href="tel:+15550123" style="color: #d6b46a;">+1 555-0123</a>
-        </div>
-      `).openPopup();
-
-      // Add click event to get directions
-      map.on('click', function (e) {
-        const lat = e.latlng.lat;
-        const lng = e.latlng.lng;
-        const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${studioLat},${studioLng}`;
-        window.open(directionsUrl, '_blank');
-      });
-
-      // Add a small info control
-      L.control.scale().addTo(map);
+      L.marker([40.7580, -73.9855], { icon: customIcon }).addTo(map).bindPopup('<b>Atelier</b>').openPopup();
     });
   </script>
   <script src="js/premium-header.js"></script>

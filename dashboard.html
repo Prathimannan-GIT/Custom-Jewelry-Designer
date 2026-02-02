@@ -5,8 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dashboard | Custom Jewelry Designer</title>
-  <meta name="description"
-    content="Client dashboard for designs, messages, approvals, payments, and notifications. Includes admin/designer mode toggle." />
+  <meta name="description" content="Manage your custom jewelry projects." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -15,339 +14,470 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
 </head>
 
 <body class="interior-page">
 
-  <header class="premium-header">
-    <!-- LEFT ZONE - BRAND -->
-    <a href="index.html" class="header-brand">
-      <div class="brand-badge">
-        <i class="fa-solid fa-gem" aria-hidden="true"></i>
-      </div>
-      <div class="brand-text">
-        <strong>Custom Jewelry Designer</strong>
-      </div>
-    </a>
+  <!-- Mobile Sidebar Toggle -->
+  <button class="sidebar-toggle-fixed" id="mobileDashToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="sidebar-overlay" id="dashOverlay"></div>
 
-
-    <!-- CENTER ZONE - MAIN NAVIGATION -->
-    <nav class="header-nav" role="navigation" aria-label="Main navigation">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="home2.html" class="nav-link">Home 2</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="collections.html" class="nav-link">Gallery</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="dashboard.html" class="nav-link active">Dashboard</a>
-    </nav>
-
-    <!-- RIGHT ZONE - USER ACTIONS -->
-    <div class="header-actions">
-      <button class="theme-toggle" aria-label="Toggle theme">
-        <i class="fa-solid fa-sun" aria-hidden="true"></i>
-        <i class="fa-solid fa-moon" aria-hidden="true"></i>
-      </button>
-      <a href="login.html" class="btn-outline">Login</a>
-      <a href="register.html" class="btn-primary">Register</a>
-    </div>
-
-
-    <!-- MOBILE HAMBURGER -->
-    <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-  </header>
-
-  <!-- MOBILE SLIDE-IN MENU -->
-  <div class="mobile-menu-overlay">
-    <div class="mobile-menu-panel">
-      <div class="mobile-menu-header">
-        <div class="brand-badge">
-          <i class="fa-solid fa-gem" aria-hidden="true"></i>
-        </div>
-        <div class="brand-text">
-          <strong>Custom Jewelry Designer</strong>
-        </div>
-        <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
-          <i class="fa-solid fa-times"></i>
-        </button>
-      </div>
-      <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="home2.html" class="mobile-nav-link">Home 2</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="services.html" class="mobile-nav-link">Services</a>
-        <a href="collections.html" class="mobile-nav-link">Gallery</a>
-        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="dashboard.html" class="mobile-nav-link active">Dashboard</a>
-      </nav>
-      <div class="mobile-menu-actions">
-        <a href="login.html" class="btn-outline mobile-btn">Login</a>
-        <a href="register.html" class="btn-primary mobile-btn">Register</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="banner" role="banner"
-    style="background-image:linear-gradient(135deg, rgba(214,180,106,0.14), transparent 60%), url('assets/images/dashboard-bg.jpg');">
-
-    <div class="container banner-inner">
-      <div class="eyebrow">Dashboard</div>
-      <h1>Projects, approvals, and payments—organized</h1>
-      <p class="kicker">This dashboard supports both client and admin/designer workflows (toggle on the left). All data
-        is stored locally for demo purposes.</p>
-    </div>
-  </div>
-
-  <main class="container">
+  <main class="dashboard-main">
     <div class="dashboard-layout">
-      <aside class="sidebar" aria-label="Dashboard sidebar">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="dashSidebar">
         <div class="sidebar-inner">
-          <div class="sidebar-top">
-            <strong>Workspace</strong>
-            <span id="roleLabel">Client Mode</span>
-            <div class="divider"></div>
-            <div class="field" style="margin:0;">
-              <label style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
-                <span style="font-weight:800;">Admin / Designer</span>
-                <input id="roleSwitch" type="checkbox" />
-              </label>
-              <div class="helper">Switch view to reveal admin-only tools.</div>
-            </div>
-            <div class="divider"></div>
-            <button id="sidebarToggle" class="btn sidebar-toggle" type="button"><span>Menu</span><i
-                class="fa-solid fa-bars" aria-hidden="true"></i></button>
+          <div class="sidebar-brand-wrapper">
+            <a href="index.html" class="sidebar-brand">
+              <div class="brand-badge">
+                <i class="fa-solid fa-gem"></i>
+              </div>
+              <div class="brand-text">Designer Studio</div>
+            </a>
           </div>
 
-          <nav class="sidebar-nav" aria-label="Dashboard navigation">
-            <a class="active" href="#" data-target="sec-overview"><i class="fa-solid fa-gauge-high"
-                aria-hidden="true"></i>Dashboard Overview</a>
-            <a href="#" data-target="sec-designs"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i>My Designs</a>
-            <a href="#" data-target="sec-messages"><i class="fa-solid fa-message" aria-hidden="true"></i>Messages</a>
-            <a href="#" data-target="sec-approvals"><i class="fa-solid fa-circle-check"
-                aria-hidden="true"></i>Approvals</a>
-            <a href="#" data-target="sec-payments"><i class="fa-solid fa-credit-card"
-                aria-hidden="true"></i>Payments</a>
-            <a href="#" data-target="sec-notifications"><i class="fa-solid fa-bell"
-                aria-hidden="true"></i>Notifications</a>
-            <a href="#" data-target="profileSettingsAnchor"><i class="fa-solid fa-user-gear"
-                aria-hidden="true"></i>Profile Settings</a>
-            <a href="index.html"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>Logout</a>
+          <div class="sidebar-top">
+            <div class="role-badge">
+              <span id="roleLabel" class="badge">Client Workspace</span>
+            </div>
+            <div class="role-toggle">
+              <label class="toggle-switch">
+                <input id="roleSwitch" type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <a class="nav-item active" href="#" data-section="overview">
+              <i class="fa-solid fa-gauge-high"></i>
+              <span>Overview</span>
+            </a>
+            <a class="nav-item" href="#" data-section="designs">
+              <i class="fa-solid fa-pen-ruler"></i>
+              <span>Designs</span>
+            </a>
+            <a class="nav-item" href="#" data-section="messages">
+              <i class="fa-solid fa-message"></i>
+              <span>Messages</span>
+            </a>
+            <a class="nav-item" href="#" data-section="approvals">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Approvals</span>
+            </a>
+            <a class="nav-item" href="#" data-section="payments">
+              <i class="fa-solid fa-credit-card"></i>
+              <span>Payments</span>
+            </a>
+            <a class="nav-item" href="#" data-section="notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span>Notifications</span>
+            </a>
+            <div class="sidebar-divider"></div>
           </nav>
 
           <div class="sidebar-bottom">
-            <a class="btn small ghost" href="contact.html"><i class="fa-solid fa-headset"
-                aria-hidden="true"></i>Support</a>
-            <a class="btn small" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
-                aria-hidden="true"></i>New Request</a>
+            <button id="themeToggle" class="theme-toggle">
+              <i class="fa-solid fa-sun"></i>
+              <span>Theme</span>
+            </button>
+            <a href="index.html" class="logout-btn">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Logout</span>
+            </a>
+            <a class="btn primary new-design-btn" href="design-studio.html">
+              <i class="fa-solid fa-plus"></i>
+              <span>New Design</span>
+            </a>
           </div>
         </div>
       </aside>
 
-      <div style="display:grid; gap: 18px;">
-        <section id="sec-overview" class="card pad section compact" aria-label="Project overview cards">
-          <div class="eyebrow">Overview</div>
-          <h2>Project overview</h2>
-          <div class="admin-only" style="margin-top:12px;">
-            <span class="badge"><i class="fa-solid fa-user-gear" aria-hidden="true"></i>Admin tools enabled</span>
-            <div style="margin-top:10px;">
-              <a class="btn small" href="admin-dashboard.html"><i class="fa-solid fa-arrow-up-right-from-square"
-                  aria-hidden="true"></i>Open Admin / Designer Dashboard</a>
-            </div>
+      <!-- Main Content -->
+      <div class="dashboard-content">
+        <!-- Overview Section -->
+        <section class="dashboard-section active" id="overview">
+          <div class="section-header">
+            <span class="eyebrow">Workspace</span>
+            <h2>Welcome to your studio</h2>
           </div>
-          <div class="grid cols-3" style="margin-top:16px;">
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <span class="badge"><i class="fa-solid fa-sparkles" aria-hidden="true"></i>Client Requests</span>
-              <h3 class="client-only">Your active project</h3>
-              <h3 class="admin-only">New client requests</h3>
-              <p class="client-only">Track progress from concept to delivery.</p>
-              <p class="admin-only">Review submissions and assign designers.</p>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <h4>Active Designs</h4>
+              <p class="stat-value">3</p>
             </div>
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <span class="badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Workflow</span>
-              <h3 class="client-only">Approvals ready</h3>
-              <h3 class="admin-only">Design approval workflow</h3>
-              <p class="client-only">Approve concepts or request revisions.</p>
-              <p class="admin-only">Move designs through review with clear status.</p>
+            <div class="stat-card">
+              <h4>Unread Messages</h4>
+              <p class="stat-value">5</p>
             </div>
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <span class="badge"><i class="fa-solid fa-credit-card" aria-hidden="true"></i>Payments</span>
-              <h3 class="client-only">Stage payments</h3>
-              <h3 class="admin-only">Payment tracking</h3>
-              <p class="client-only">Pay by milestone with visible progress.</p>
-              <p class="admin-only">Monitor stage completion and follow up.</p>
+            <div class="stat-card">
+              <h4>Account Balance</h4>
+              <p class="stat-value">$2,450.00</p>
             </div>
           </div>
 
-          <div class="admin-only" style="margin-top:16px;">
-            <div class="divider"></div>
-            <h3>Recent requests</h3>
-            <table class="table" aria-label="Requests table">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <h4>Pending Approvals</h4>
+              <p class="stat-value">2</p>
+            </div>
+            <div class="stat-card">
+              <h4>Completed Projects</h4>
+              <p class="stat-value">12</p>
+            </div>
+            <div class="stat-card">
+              <h4>Total Spent</h4>
+              <p class="stat-value">$18,750</p>
+            </div>
+          </div>
+
+          <div class="progress-card">
+            <h3>Recent Project Progress</h3>
+            <div class="progress-list">
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-title">Solitaire Radiance Ring</span>
+                  <span class="progress-percent">75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span class="progress-title">Diamond Eternity Band</span>
+                  <span class="progress-percent">45%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Designs Section -->
+        <section class="dashboard-section" id="designs">
+          <div class="section-header">
+            <span class="eyebrow">Projects</span>
+            <h2>Your Designs</h2>
+          </div>
+
+          <div class="design-grid">
+            <div class="design-card">
+              <div class="design-image">
+                <i class="fa-solid fa-ring"></i>
+              </div>
+              <div class="design-content">
+                <h3 class="design-title">Solitaire Radiance Ring</h3>
+                <p class="design-description">Custom engagement ring with 2ct diamond</p>
+                <span class="status-badge status-fabrication">In Fabrication</span>
+              </div>
+            </div>
+            
+            <div class="design-card">
+              <div class="design-image">
+                <i class="fa-solid fa-gem"></i>
+              </div>
+              <div class="design-content">
+                <h3 class="design-title">Diamond Eternity Band</h3>
+                <p class="design-description">Full eternity band with 20 diamonds</p>
+                <span class="status-badge status-fabrication">In Fabrication</span>
+              </div>
+            </div>
+            
+            <div class="design-card">
+              <div class="design-image">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div class="design-content">
+                <h3 class="design-title">Heart Pendant Necklace</h3>
+                <p class="design-description">18k gold heart with birthstone</p>
+                <span class="status-badge status-completed">Completed</span>
+              </div>
+            </div>
+            
+            <div class="design-card">
+              <div class="design-image">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <div class="design-content">
+                <h3 class="design-title">Royal Tiara Design</h3>
+                <p class="design-description">Bridal tiara with pearls and crystals</p>
+                <span class="status-badge status-pending">Pending</span>
+              </div>
+            </div>
+            
+            <div class="design-card">
+              <div class="design-image">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="design-content">
+                <h3 class="design-title">Vintage Pocket Watch</h3>
+                <p class="design-description">Custom engraved pocket watch</p>
+                <span class="status-badge status-completed">Completed</span>
+              </div>
+            </div>
+            
+            <div class="design-card">
+              <div class="design-image">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="design-content">
+                <h3 class="design-title">Starlight Earrings</h3>
+                <p class="design-description">Diamond stud earrings with star design</p>
+                <span class="status-badge status-pending">Pending</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Messages Section -->
+        <section class="dashboard-section" id="messages">
+          <div class="section-header">
+            <span class="eyebrow">Communication</span>
+            <h2>Messages</h2>
+          </div>
+
+          <div class="message-list">
+            <div class="message-item">
+              <div class="message-avatar">JD</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-sender">John Designer</span>
+                  <span class="message-time">2 hours ago</span>
+                </div>
+                <p class="message-preview">Hi! I've updated the 3D render for your ring design. Please take a look and let me know your thoughts...</p>
+              </div>
+              <div class="unread-indicator"></div>
+            </div>
+            
+            <div class="message-item">
+              <div class="message-avatar">SM</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-sender">Sarah Miller</span>
+                  <span class="message-time">5 hours ago</span>
+                </div>
+                <p class="message-preview">Your custom necklace is ready for final approval. The engraving looks perfect!</p>
+              </div>
+              <div class="unread-indicator"></div>
+            </div>
+            
+            <div class="message-item">
+              <div class="message-avatar">TC</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-sender">Team Coordinator</span>
+                  <span class="message-time">1 day ago</span>
+                </div>
+                <p class="message-preview">Your order has been shipped! Tracking number: JWD2024031542</p>
+              </div>
+            </div>
+            
+            <div class="message-item">
+              <div class="message-avatar">MG</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-sender">Michael Goldsmith</span>
+                  <span class="message-time">2 days ago</span>
+                </div>
+                <p class="message-preview">The gold setting has been crafted. We're now ready to set the diamonds.</p>
+              </div>
+            </div>
+            
+            <div class="message-item">
+              <div class="message-avatar">AS</div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-sender">Amy Support</span>
+                  <span class="message-time">3 days ago</span>
+                </div>
+                <p class="message-preview">Thank you for your feedback! We've updated the design based on your suggestions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Approvals Section -->
+        <section class="dashboard-section" id="approvals">
+          <div class="section-header">
+            <span class="eyebrow">Reviews</span>
+            <h2>Pending Approvals</h2>
+          </div>
+
+          <div class="approval-list">
+            <div class="approval-card">
+              <div class="approval-info">
+                <h4>Solitaire Ring - Final Design</h4>
+                <p>Ready for your approval before we begin fabrication</p>
+              </div>
+              <div class="approval-actions">
+                <button class="btn btn-secondary">
+                  <i class="fa-solid fa-eye"></i>
+                  View
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-check"></i>
+                  Approve
+                </button>
+              </div>
+            </div>
+            
+            <div class="approval-card">
+              <div class="approval-info">
+                <h4>Eternity Band - Diamond Selection</h4>
+                <p>Please review and approve the chosen diamonds</p>
+              </div>
+              <div class="approval-actions">
+                <button class="btn btn-secondary">
+                  <i class="fa-solid fa-eye"></i>
+                  View
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-check"></i>
+                  Approve
+                </button>
+              </div>
+            </div>
+            
+            <div class="approval-card">
+              <div class="approval-info">
+                <h4>Necklace Engraving Proof</h4>
+                <p>Final engraving design ready for your review</p>
+              </div>
+              <div class="approval-actions">
+                <button class="btn btn-secondary">
+                  <i class="fa-solid fa-eye"></i>
+                  View
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-check"></i>
+                  Approve
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Payments Section -->
+        <section class="dashboard-section" id="payments">
+          <div class="section-header">
+            <span class="eyebrow">Finance</span>
+            <h2>Payment History</h2>
+          </div>
+
+          <div class="payment-table">
+            <table>
               <thead>
                 <tr>
-                  <th>Request ID</th>
-                  <th>Summary</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Amount</th>
                   <th>Status</th>
-                  <th>Action</th>
                 </tr>
               </thead>
-              <tbody id="requestTableBody"></tbody>
+              <tbody>
+                <tr>
+                  <td>Mar 15, 2026</td>
+                  <td>Solitaire Ring - Final Payment</td>
+                  <td class="payment-amount">$3,500.00</td>
+                  <td><span class="payment-status status-paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Mar 10, 2026</td>
+                  <td>Eternity Band - Deposit</td>
+                  <td class="payment-amount">$1,200.00</td>
+                  <td><span class="payment-status status-paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Mar 5, 2026</td>
+                  <td>Design Consultation</td>
+                  <td class="payment-amount">$150.00</td>
+                  <td><span class="payment-status status-paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Feb 28, 2026</td>
+                  <td>Heart Pendant - Final Payment</td>
+                  <td class="payment-amount">$850.00</td>
+                  <td><span class="payment-status status-paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>Feb 20, 2026</td>
+                  <td>Initial Design Deposit</td>
+                  <td class="payment-amount">$500.00</td>
+                  <td><span class="payment-status status-pending">Pending</span></td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </section>
 
-        <section id="sec-designs" class="card pad section compact" aria-label="Active design progress">
-          <div class="eyebrow">Designs</div>
-          <h2>Active design progress</h2>
-          <div class="grid cols-2" style="margin-top:16px; align-items:start;">
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3 class="client-only">Your current milestone</h3>
-              <h3 class="admin-only">Project timeline</h3>
-              <p class="client-only">Concept review is available. Approve or request revision.</p>
-              <p class="admin-only">Manage concept → fabrication → finishing → delivery milestones.</p>
-              <div class="divider"></div>
-              <div class="progress">
-                <div style="width: 55%;" aria-hidden="true"></div>
-              </div>
-              <div class="helper" style="margin-top:10px;">55% — concept to fabrication</div>
-            </div>
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3 class="client-only">Next step</h3>
-              <h3 class="admin-only">Reports & analytics</h3>
-              <p class="client-only">Confirm details in messaging and approvals.</p>
-              <p class="admin-only">Review overall throughput and milestone completion trends.</p>
-              <div class="divider"></div>
-              <div class="hero-actions">
-                <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-pen-ruler"
-                    aria-hidden="true"></i>Edit design draft</a>
-                <a class="btn" href="pricing.html"><i class="fa-solid fa-receipt" aria-hidden="true"></i>Payment
-                  stages</a>
-              </div>
-            </div>
+        <!-- Notifications Section -->
+        <section class="dashboard-section" id="notifications">
+          <div class="section-header">
+            <span class="eyebrow">Activity</span>
+            <h2>Notifications</h2>
           </div>
-        </section>
 
-        <section id="sec-messages" class="card pad section compact" aria-label="Designer messages">
-          <div class="eyebrow">Messages</div>
-          <h2>Client–designer messaging</h2>
-          <div id="messages" class="grid cols-2" style="margin-top:16px; align-items:start;">
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3>Thread</h3>
-              <div id="messageList" class="preview-wrap" aria-label="Message list"></div>
-            </div>
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3>Send a message</h3>
-              <form id="messageForm" class="form" data-validate>
-                <div class="field">
-                  <label for="messageInput">Message</label>
-                  <textarea id="messageInput" required
-                    placeholder="Share notes, questions, sizing, or reference details..."></textarea>
-                </div>
-                <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane"
-                    aria-hidden="true"></i>Send</button>
-              </form>
-            </div>
-          </div>
-        </section>
-
-        <section id="sec-approvals" class="card pad section compact" aria-label="Approvals and file management">
-          <div class="eyebrow">Approvals</div>
-          <h2>Design approval system</h2>
-          <div id="approvals" class="grid cols-2" style="margin-top:16px; align-items:start;">
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3>Current status</h3>
-              <p>Approval status is stored locally for demo purposes.</p>
-              <div class="divider"></div>
-              <span class="badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span
-                  id="approvalStatus">Pending</span></span>
-              <div class="divider"></div>
-              <div class="hero-actions">
-                <button id="approveBtn" class="btn primary" type="button"><i class="fa-solid fa-check"
-                    aria-hidden="true"></i>Approve</button>
-                <button id="reviseBtn" class="btn" type="button"><i class="fa-solid fa-rotate"
-                    aria-hidden="true"></i>Request revision</button>
+          <div class="notification-list">
+            <div class="notification-item unread">
+              <div class="notification-icon">
+                <i class="fa-solid fa-bell"></i>
               </div>
-            </div>
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3 class="client-only">Uploaded files</h3>
-              <h3 class="admin-only">File & sketch management</h3>
-              <p class="client-only">Add references in Design Studio. Your designer reviews them here.</p>
-              <p class="admin-only">Organize sketches, CAD exports, and client references in one place.</p>
-              <div class="divider"></div>
-              <a class="btn" href="design-studio.html"><i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i>Go to
-                uploads</a>
-            </div>
-          </div>
-        </section>
-
-        <section id="sec-payments" class="card pad section compact" aria-label="Payment status">
-          <div class="eyebrow">Payments</div>
-          <h2>Payment status</h2>
-          <div id="payments" class="grid cols-2" style="margin-top:16px; align-items:start;">
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3>Stages</h3>
-              <div class="checkbox-group" style="margin-top:10px;">
-                <input type="checkbox" id="dash_s1" data-stage="s1" />
-                <label for="dash_s1">Deposit</label>
+              <div class="notification-content">
+                <div class="notification-title">New Message Received</div>
+                <div class="notification-message">John Designer sent you an update about your ring design</div>
               </div>
-              <div class="checkbox-group">
-                <input type="checkbox" id="dash_s2" data-stage="s2" />
-                <label for="dash_s2">Fabrication</label>
-              </div>
-              <div class="checkbox-group">
-                <input type="checkbox" id="dash_s3" data-stage="s3" />
-                <label for="dash_s3">Final balance</label>
-              </div>
-
-              <div class="helper">Toggle stages to update progress.</div>
+              <div class="notification-time">2 hours ago</div>
             </div>
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3>Progress</h3>
-              <div class="progress" aria-label="Payment progress">
-                <div id="paymentBar"></div>
+            
+            <div class="notification-item unread">
+              <div class="notification-icon">
+                <i class="fa-solid fa-check-circle"></i>
               </div>
-              <div class="helper" id="paymentLabel" style="margin-top:10px;">0% complete</div>
-              <div class="divider"></div>
-              <span class="badge"><i class="fa-solid fa-shield" aria-hidden="true"></i>Secure milestone flow</span>
+              <div class="notification-content">
+                <div class="notification-title">Approval Required</div>
+                <div class="notification-message">Your necklace engraving is ready for review</div>
+              </div>
+              <div class="notification-time">5 hours ago</div>
             </div>
-          </div>
-        </section>
-
-        <section id="sec-notifications" class="card pad section compact" aria-label="Notifications">
-          <div id="profileSettingsAnchor"></div>
-          <div class="eyebrow">Notifications</div>
-          <h2>Notifications & profile settings</h2>
-          <div class="grid cols-2" style="margin-top:16px; align-items:start;">
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3>Notifications</h3>
-              <div id="notificationList" class="preview-wrap" aria-label="Notifications list"></div>
+            
+            <div class="notification-item">
+              <div class="notification-icon">
+                <i class="fa-solid fa-truck"></i>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">Order Shipped</div>
+                <div class="notification-message">Your custom jewelry has been shipped and is on its way</div>
+              </div>
+              <div class="notification-time">1 day ago</div>
             </div>
-            <div class="card pad" style="box-shadow:none;background:rgba(255,255,255,0.03);">
-              <h3>Profile settings</h3>
-              <form class="form" data-validate>
-                <div class="split">
-                  <div class="field">
-                    <label for="profileName">Full name</label>
-                    <input id="profileName" required placeholder="Your name" />
-                  </div>
-                  <div class="field">
-                    <label for="profileEmail">Email</label>
-                    <input id="profileEmail" type="email" required placeholder="you@example.com" />
-                  </div>
-                </div>
-                <div class="field">
-                  <label for="profilePrefs">Preferences</label>
-                  <textarea id="profilePrefs"
-                    placeholder="Metal preferences, gemstone preferences, delivery notes..."></textarea>
-                </div>
-                <button class="btn primary" type="submit"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>Save
-                  settings</button>
-              </form>
+            
+            <div class="notification-item">
+              <div class="notification-icon">
+                <i class="fa-solid fa-gem"></i>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">Design Update</div>
+                <div class="notification-message">New 3D render available for your review</div>
+              </div>
+              <div class="notification-time">2 days ago</div>
+            </div>
+            
+            <div class="notification-item">
+              <div class="notification-icon">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">Project Completed</div>
+                <div class="notification-message">Your heart pendant necklace has been completed</div>
+              </div>
+              <div class="notification-time">3 days ago</div>
             </div>
           </div>
         </section>
@@ -355,9 +485,9 @@
     </div>
   </main>
 
-
   <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 
 </html>
