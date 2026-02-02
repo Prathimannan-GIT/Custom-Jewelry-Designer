@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: 80px;
+  height: 70px;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   border-bottom: 1px solid rgba(214, 180, 106, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -19,6 +19,32 @@
   z-index: 1000;
   backdrop-filter: blur(10px);
 }
+
+html[data-theme="light"] .premium-header {
+  background: linear-gradient(135deg, #ffffff 0%, #f4f1ea 100%);
+  border-bottom: 1px solid rgba(18, 18, 20, 0.1);
+}
+
+html[data-theme="light"] .brand-text {
+  color: #121214;
+}
+
+html[data-theme="light"] .nav-link {
+  color: #121214;
+}
+
+html[data-theme="light"] .nav-link:hover {
+  background: rgba(214, 180, 106, 0.2);
+}
+
+html[data-theme="light"] .mobile-menu-panel {
+  background: linear-gradient(135deg, #ffffff 0%, #f4f1ea 100%);
+}
+
+html[data-theme="light"] .mobile-nav-link {
+  color: #121214;
+}
+
 
 /* LEFT ZONE - BRAND */
 .header-brand {
@@ -62,18 +88,19 @@
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   flex: 1;
   justify-content: center;
-  max-width: 800px;
-  margin: 0 2rem;
+  margin: 0 1rem;
+  min-width: 0;
 }
 
+
 .nav-link {
-  padding: 10px 16px;
+  padding: 8px 12px;
   border-radius: 24px;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
   font-weight: 500;
   color: #b8b8b8;
   text-decoration: none;
@@ -81,6 +108,7 @@
   position: relative;
   white-space: nowrap;
 }
+
 
 .nav-link:hover {
   background: rgba(214, 180, 106, 0.1);
@@ -141,6 +169,47 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(214, 180, 106, 0.4);
 }
+
+/* THEME TOGGLE */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(214, 180, 106, 0.4);
+  background: rgba(214, 180, 106, 0.1);
+  color: #d6b46a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(214, 180, 106, 0.2);
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  font-size: 18px;
+}
+
+html[data-theme="light"] .theme-toggle i.fa-moon {
+  display: block;
+}
+
+html[data-theme="light"] .theme-toggle i.fa-sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle i.fa-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle i.fa-sun {
+  display: block;
+}
+
 
 /* MOBILE HAMBURGER */
 .mobile-menu-toggle {
@@ -292,26 +361,29 @@
     padding: 0 1.5rem;
     height: 70px;
   }
-  
+
   .header-nav {
-    gap: 6px;
-    margin: 0 1rem;
+    gap: 2px;
+    margin: 0 0.5rem;
   }
-  
+
+
   .nav-link {
-    padding: 8px 12px;
-    font-size: 0.85rem;
+    padding: 6px 10px;
+    font-size: 0.8rem;
   }
-  
+
+
   .brand-text {
     font-size: 1.1rem;
   }
-  
+
   .header-actions {
     gap: 10px;
   }
-  
-  .btn-outline, .btn-primary {
+
+  .btn-outline,
+  .btn-primary {
     padding: 8px 16px;
     font-size: 0.85rem;
   }
@@ -323,33 +395,33 @@
     padding: 0 1rem;
     height: 64px;
   }
-  
+
   .header-nav {
     display: none;
   }
-  
+
   .header-actions {
     display: none;
   }
-  
+
   .mobile-menu-toggle {
     display: flex;
   }
-  
+
   .mobile-menu-panel {
     width: 280px;
     right: -280px;
   }
-  
+
   .brand-text {
     font-size: 1rem;
   }
-  
+
   .brand-badge {
     width: 40px;
     height: 40px;
   }
-  
+
   .brand-badge i {
     font-size: 18px;
   }
@@ -361,21 +433,21 @@
     padding: 0 0.75rem;
     height: 60px;
   }
-  
+
   .mobile-menu-panel {
     width: 100%;
     right: -100%;
   }
-  
+
   .brand-text {
     font-size: 0.9rem;
   }
-  
+
   .brand-badge {
     width: 36px;
     height: 36px;
   }
-  
+
   .brand-badge i {
     font-size: 16px;
   }
@@ -398,29 +470,50 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Smooth scroll for main content */
-main {
-  margin-top: 80px;
-  transition: margin-top 0.3s ease;
+/* Spacing for fixed header */
+body.interior-page {
+  padding-top: 70px;
+}
+
+body.home-page main {
+  margin-top: 70px;
+}
+
+/* Prevent double spacing on interior pages that use both padding and main margin */
+body.interior-page main {
+  margin-top: 0 !important;
 }
 
 @media (max-width: 1024px) {
-  main {
-    margin-top: 70px;
+  body.interior-page {
+    padding-top: 70px;
   }
 }
 
 @media (max-width: 768px) {
-  main {
-    margin-top: 64px;
+  body.interior-page {
+    padding-top: 60px;
   }
 }
 
 @media (max-width: 480px) {
-  main {
-    margin-top: 60px;
+  body.interior-page {
+    padding-top: 60px;
   }
 }
+
+
+/* Ensure consistent header height */
+.premium-header {
+  height: 70px !important;
+}
+
+@media (max-width: 768px) {
+  .premium-header {
+    height: 60px !important;
+  }
+}
+
 
 /* ================================
    ACCESSIBILITY & FOCUS STATES
@@ -441,7 +534,7 @@ main {
   .premium-header {
     border-bottom: 2px solid #ffffff;
   }
-  
+
   .nav-link,
   .btn-outline {
     border: 2px solid #ffffff;
@@ -450,6 +543,7 @@ main {
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
   .premium-header,
   .nav-link,
   .btn-outline,

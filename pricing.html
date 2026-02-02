@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-theme="dark" data-role="client">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,22 +8,27 @@
   <meta name="description" content="Transparent pricing and payment stages for custom jewelry design." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
-<body>
+
+<body class="interior-page">
+
   <header class="premium-header">
     <!-- LEFT ZONE - BRAND -->
-    <div class="header-brand">
+    <a href="index.html" class="header-brand">
       <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
       </div>
       <div class="brand-text">
         <strong>Custom Jewelry Designer</strong>
       </div>
-    </div>
+    </a>
+
 
     <!-- CENTER ZONE - MAIN NAVIGATION -->
     <nav class="header-nav" role="navigation" aria-label="Main navigation">
@@ -38,9 +44,14 @@
 
     <!-- RIGHT ZONE - USER ACTIONS -->
     <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
       <a href="login.html" class="btn-outline">Login</a>
       <a href="register.html" class="btn-primary">Register</a>
     </div>
+
 
     <!-- MOBILE HAMBURGER -->
     <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
@@ -81,11 +92,13 @@
     </div>
   </div>
 
-  <div class="banner" role="banner" style="margin-top: 80px;">
+  <div class="banner" role="banner">
+
     <div class="container banner-inner">
       <div class="eyebrow">Pricing</div>
       <h1>Transparent stages, premium outcomes</h1>
-      <p class="kicker">Front-end pricing UI with clear policies. Final quotes are confirmed after your consultation and concept review.</p>
+      <p class="kicker">Front-end pricing UI with clear policies. Final quotes are confirmed after your consultation and
+        concept review.</p>
     </div>
   </div>
 
@@ -102,7 +115,8 @@
           <div class="card pad">
             <h3>Typical range</h3>
             <p>Consultation fees vary by complexity and are applied to your final project.</p>
-            <a class="btn" href="contact.html"><i class="fa-solid fa-calendar" aria-hidden="true"></i>Book appointment</a>
+            <a class="btn" href="contact.html"><i class="fa-solid fa-calendar" aria-hidden="true"></i>Book
+              appointment</a>
           </div>
         </div>
       </div>
@@ -158,9 +172,18 @@
         <div class="eyebrow">Policy</div>
         <h2>Revision policy</h2>
         <div class="grid cols-3" style="margin-top:16px;">
-          <div class="card pad"><h3>Concept revisions</h3><p>Request refinements before approval to ensure the design aligns with your vision.</p></div>
-          <div class="card pad"><h3>Clarity milestones</h3><p>Each milestone is confirmed in the Dashboard with written notes and approvals.</p></div>
-          <div class="card pad"><h3>Changes after approval</h3><p>Major changes after approval may affect timeline and cost depending on stage.</p></div>
+          <div class="card pad">
+            <h3>Concept revisions</h3>
+            <p>Request refinements before approval to ensure the design aligns with your vision.</p>
+          </div>
+          <div class="card pad">
+            <h3>Clarity milestones</h3>
+            <p>Each milestone is confirmed in the Dashboard with written notes and approvals.</p>
+          </div>
+          <div class="card pad">
+            <h3>Changes after approval</h3>
+            <p>Major changes after approval may affect timeline and cost depending on stage.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -173,22 +196,29 @@
         <div id="payments" class="grid cols-2" style="margin-top:16px; align-items:start;">
           <div class="card pad">
             <h3>Stages</h3>
-            <div class="field" style="margin-top:10px;">
-              <label><input type="checkbox" data-stage="s1" /> Deposit (reserve production slot)</label>
+            <div class="checkbox-group" style="margin-top:10px;">
+              <input type="checkbox" id="stage1" data-stage="s1" />
+              <label for="stage1">Deposit (reserve production slot)</label>
             </div>
-            <div class="field">
-              <label><input type="checkbox" data-stage="s2" /> Fabrication (after concept approval)</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="stage2" data-stage="s2" />
+              <label for="stage2">Fabrication (after concept approval)</label>
             </div>
-            <div class="field">
-              <label><input type="checkbox" data-stage="s3" /> Final balance (before delivery)</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="stage3" data-stage="s3" />
+              <label for="stage3">Final balance (before delivery)</label>
             </div>
+
           </div>
           <div class="card pad">
             <h3>Progress</h3>
-            <div class="progress" aria-label="Payment progress"><div id="paymentBar"></div></div>
+            <div class="progress" aria-label="Payment progress">
+              <div id="paymentBar"></div>
+            </div>
             <div class="helper" id="paymentLabel" style="margin-top:10px;">0% complete</div>
             <div class="divider"></div>
-            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>View in dashboard</a>
+            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>View in
+              dashboard</a>
           </div>
         </div>
       </div>
@@ -196,13 +226,16 @@
 
     <section class="section" aria-label="Start project CTA">
       <div class="container">
-        <div class="card pad" style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
+        <div class="card pad"
+          style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
           <div class="eyebrow">Start</div>
           <h2>Start your project</h2>
           <p class="kicker">Create a request in the Design Studio, then manage it end-to-end in your Dashboard.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Design Studio</a>
-            <a class="btn" href="dashboard.html"><i class="fa-solid fa-check" aria-hidden="true"></i>Approvals & Payments</a>
+            <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
+                aria-hidden="true"></i>Design Studio</a>
+            <a class="btn" href="dashboard.html"><i class="fa-solid fa-check" aria-hidden="true"></i>Approvals &
+              Payments</a>
           </div>
         </div>
       </div>
@@ -214,7 +247,8 @@
       <div class="footer-grid">
         <div>
           <h3>Custom Jewelry Designer</h3>
-          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.</p>
+          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.
+          </p>
           <div class="social" aria-label="Social links">
             <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
             <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
@@ -269,6 +303,8 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>

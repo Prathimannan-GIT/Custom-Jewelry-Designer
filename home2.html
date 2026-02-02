@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-theme="dark" data-role="client">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,22 +8,27 @@
   <meta name="description" content="Alternative premium layout for Custom Jewelry Designer." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
-<body>
+
+<body class="home-page">
+
   <header class="premium-header">
     <!-- LEFT ZONE - BRAND -->
-    <div class="header-brand">
+    <a href="index.html" class="header-brand">
       <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
       </div>
       <div class="brand-text">
         <strong>Custom Jewelry Designer</strong>
       </div>
-    </div>
+    </a>
+
 
     <!-- CENTER ZONE - MAIN NAVIGATION -->
     <nav class="header-nav" role="navigation" aria-label="Main navigation">
@@ -38,9 +44,14 @@
 
     <!-- RIGHT ZONE - USER ACTIONS -->
     <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
       <a href="login.html" class="btn-outline">Login</a>
       <a href="register.html" class="btn-primary">Register</a>
     </div>
+
 
     <!-- MOBILE HAMBURGER -->
     <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
@@ -82,14 +93,19 @@
   </div>
 
   <main>
-    <section class="hero" aria-label="Cinematic hero" style="background-image:linear-gradient(180deg, rgba(15,15,16,0.58), rgba(15,15,16,0.90)), url('assets/images/home2-hero.jpg'); margin-top: 80px;">
+    <section class="hero" aria-label="Cinematic hero"
+      style="background-image:linear-gradient(180deg, rgba(15,15,16,0.58), rgba(15,15,16,0.90)), url('assets/images/luxury_jewelry_hero_2.png');">
+
+
       <div class="hero-inner">
         <div class="hero-panel">
           <div class="eyebrow">Custom Jewelry Designer — Home 2</div>
           <h1>Cinematic luxury. Crafted intimacy. Your design—directed.</h1>
-          <p class="kicker">A premium layout focused on storytelling: philosophy, designers, testimonials, and ethics—without losing the tools that keep projects moving.</p>
+          <p class="kicker">A premium layout focused on storytelling: philosophy, designers, testimonials, and
+            ethics—without losing the tools that keep projects moving.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Design Preview</a>
+            <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
+                aria-hidden="true"></i>Design Preview</a>
             <a class="btn" href="pricing.html"><i class="fa-solid fa-coins" aria-hidden="true"></i>Pricing</a>
           </div>
         </div>
@@ -118,7 +134,8 @@
       <div class="container">
         <div class="eyebrow">Philosophy</div>
         <h2>Bespoke begins with listening</h2>
-        <p class="kicker">Every piece is designed with restraint, balance, and intention—so the final result feels effortless and timeless.</p>
+        <p class="kicker">Every piece is designed with restraint, balance, and intention—so the final result feels
+          effortless and timeless.</p>
         <div class="grid cols-3" style="margin-top:16px;">
           <div class="card pad">
             <h3>Proportion</h3>
@@ -225,18 +242,21 @@
         <div class="eyebrow">Ethics</div>
         <h2>Sustainability without compromise</h2>
         <p class="kicker">We encourage mindful sourcing, recyclable metals, and longevity-first design decisions.</p>
-        <div class="grid cols-2" style="margin-top:16px;">
-          <div class="card pad">
+        <div class="grid cols-2" style="margin-top:24px; text-align: center;">
+          <div class="card pad"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px;">
             <h3>Responsible sourcing</h3>
             <p>We prioritize traceable suppliers and transparent material options.</p>
             <a class="link" href="contact.html">Ask about sourcing</a>
           </div>
-          <div class="card pad">
+          <div class="card pad"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px;">
             <h3>Designed to last</h3>
             <p>Durable engineering and timeless aesthetics reduce the need for replacement.</p>
             <a class="link" href="pricing.html">Review policies</a>
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -246,7 +266,8 @@
       <div class="footer-grid">
         <div>
           <h3>Custom Jewelry Designer</h3>
-          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.</p>
+          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.
+          </p>
           <div class="social" aria-label="Social links">
             <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
             <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
@@ -304,4 +325,5 @@
   <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>

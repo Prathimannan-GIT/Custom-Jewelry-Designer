@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-theme="dark" data-role="client">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,23 +8,28 @@
   <meta name="description" content="Contact us, book an appointment, and get support." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
-<body>
+
+<body class="interior-page">
+
   <header class="premium-header">
     <!-- LEFT ZONE - BRAND -->
-    <div class="header-brand">
+    <a href="index.html" class="header-brand">
       <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
       </div>
       <div class="brand-text">
         <strong>Custom Jewelry Designer</strong>
       </div>
-    </div>
+    </a>
+
 
     <!-- CENTER ZONE - MAIN NAVIGATION -->
     <nav class="header-nav" role="navigation" aria-label="Main navigation">
@@ -39,9 +45,14 @@
 
     <!-- RIGHT ZONE - USER ACTIONS -->
     <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
       <a href="login.html" class="btn-outline">Login</a>
       <a href="register.html" class="btn-primary">Register</a>
     </div>
+
 
     <!-- MOBILE HAMBURGER -->
     <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
@@ -82,7 +93,8 @@
     </div>
   </div>
 
-  <div class="banner" role="banner" style="margin-top: 80px;">
+  <div class="banner" role="banner">
+
     <div class="container banner-inner">
       <div class="eyebrow">Contact</div>
       <h1>Talk to the atelier</h1>
@@ -120,9 +132,11 @@
               </div>
               <div class="field">
                 <label for="cMsg">Message</label>
-                <textarea id="cMsg" required placeholder="Tell us about your project, timeline, and preferences..."></textarea>
+                <textarea id="cMsg" required
+                  placeholder="Tell us about your project, timeline, and preferences..."></textarea>
               </div>
-              <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Send message</button>
+              <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Send
+                message</button>
             </form>
           </div>
           <div class="card pad">
@@ -130,12 +144,14 @@
             <p>For faster assistance, include your request ID from the Dashboard.</p>
             <div class="divider"></div>
             <div class="preview-meta">
-              <span class="badge"><i class="fa-solid fa-envelope" aria-hidden="true"></i>support@aurum-atelier.example</span>
+              <span class="badge"><i class="fa-solid fa-envelope"
+                  aria-hidden="true"></i>support@aurum-atelier.example</span>
               <span class="badge"><i class="fa-solid fa-phone" aria-hidden="true"></i>+00 0000 000 000</span>
               <span class="badge"><i class="fa-solid fa-clock" aria-hidden="true"></i>Mon–Sat, 10am–6pm</span>
             </div>
             <div class="divider"></div>
-            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>Open Dashboard</a>
+            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>Open
+              Dashboard</a>
           </div>
         </div>
       </div>
@@ -168,17 +184,20 @@
           <div class="card pad">
             <h3>Virtual consultation</h3>
             <p>Perfect for moodboards, sizing, and initial direction.</p>
-            <button class="btn" type="button" data-link="login.html"><i class="fa-solid fa-calendar" aria-hidden="true"></i>Book</button>
+            <button class="btn" type="button" data-link="login.html"><i class="fa-solid fa-calendar"
+                aria-hidden="true"></i>Book</button>
           </div>
           <div class="card pad">
             <h3>In-studio visit</h3>
             <p>View materials, try sizing, and review sample finishes.</p>
-            <button class="btn" type="button" data-link="login.html"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Book</button>
+            <button class="btn" type="button" data-link="login.html"><i class="fa-solid fa-location-dot"
+                aria-hidden="true"></i>Book</button>
           </div>
           <div class="card pad">
             <h3>Priority review</h3>
             <p>For time-sensitive projects and milestone planning.</p>
-            <button class="btn" type="button" data-link="pricing.html"><i class="fa-solid fa-bolt" aria-hidden="true"></i>See stages</button>
+            <button class="btn" type="button" data-link="pricing.html"><i class="fa-solid fa-bolt"
+                aria-hidden="true"></i>See stages</button>
           </div>
         </div>
       </div>
@@ -237,18 +256,23 @@
             <h3>Follow the atelier</h3>
             <p>Inspiration, behind-the-scenes craft, and new collection drops.</p>
             <div class="social" aria-label="Social icons">
-              <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-              <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
+              <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram"
+                  aria-hidden="true"></i></a>
+              <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest"
+                  aria-hidden="true"></i></a>
               <a href="contact.html" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
               <a href="contact.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
             </div>
           </div>
-          <div class="card pad" style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
+          <div class="card pad"
+            style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
             <h3>Start a request</h3>
             <p>Create a design request and collaborate with your designer.</p>
             <div class="hero-actions">
-              <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Design Studio</a>
-              <a class="btn" href="collections.html"><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Collections</a>
+              <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
+                  aria-hidden="true"></i>Design Studio</a>
+              <a class="btn" href="collections.html"><i class="fa-solid fa-layer-group"
+                  aria-hidden="true"></i>Collections</a>
             </div>
           </div>
         </div>
@@ -261,7 +285,8 @@
       <div class="footer-grid">
         <div>
           <h3>Custom Jewelry Designer</h3>
-          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.</p>
+          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.
+          </p>
           <div class="social" aria-label="Social links">
             <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
             <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
@@ -319,19 +344,19 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // Initialize the map
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Set the initial coordinates (Manhattan, NY)
       const studioLat = 40.7580;
       const studioLng = -73.9855;
-      
+
       // Create the map
       const map = L.map('map').setView([studioLat, studioLng], 15);
-      
+
       // Add OpenStreetMap tiles
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
-      
+
       // Add a custom marker for the jewelry studio
       const customIcon = L.divIcon({
         html: '<div style="background: linear-gradient(135deg, #d6b46a, #8b7355); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"><i class="fa-solid fa-gem" style="font-size: 18px;"></i></div>',
@@ -340,7 +365,7 @@
         popupAnchor: [0, -20],
         className: 'custom-marker'
       });
-      
+
       // Add marker with popup
       const marker = L.marker([studioLat, studioLng], { icon: customIcon }).addTo(map);
       marker.bindPopup(`
@@ -351,15 +376,15 @@
           <a href="tel:+15550123" style="color: #d6b46a;">+1 555-0123</a>
         </div>
       `).openPopup();
-      
+
       // Add click event to get directions
-      map.on('click', function(e) {
+      map.on('click', function (e) {
         const lat = e.latlng.lat;
         const lng = e.latlng.lng;
         const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${studioLat},${studioLng}`;
         window.open(directionsUrl, '_blank');
       });
-      
+
       // Add a small info control
       L.control.scale().addTo(map);
     });
@@ -367,4 +392,5 @@
   <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>

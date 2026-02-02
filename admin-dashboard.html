@@ -1,67 +1,103 @@
 <!doctype html>
 <html lang="en" data-theme="dark" data-role="admin">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Admin Dashboard | Custom Jewelry Designer</title>
-  <meta name="description" content="Admin/designer dashboard to manage requests, approvals, files, payments, timelines, and analytics." />
+  <meta name="description"
+    content="Admin/designer dashboard to manage requests, approvals, files, payments, timelines, and analytics." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Home">
+
+<body class="interior-page">
+
+  <header class="premium-header">
+    <!-- LEFT ZONE - BRAND -->
+    <a href="index.html" class="header-brand">
+      <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
-        <span class="brand-name">
-          <strong>Custom Jewelry Designer</strong>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a data-nav href="index.html">Home</a>
-        <a data-nav href="home2.html">Home 2</a>
-        <a data-nav href="collections.html">Collections</a>
-        <a data-nav href="design-studio.html">Design Studio</a>
-        <a data-nav href="pricing.html">Pricing</a>
-        <a data-nav href="dashboard.html">Dashboard</a>
-        <a data-nav href="contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">
-          <i class="fa-solid fa-sun" aria-hidden="true"></i>
-        </button>
-        <a class="btn small ghost" href="login.html">Login</a>
-        <a class="btn small primary" href="register.html">Register</a>
-        <button id="navToggle" class="icon-btn hamburger" type="button" aria-label="Open menu">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
       </div>
+      <div class="brand-text">
+        <strong>Custom Jewelry Designer</strong>
+      </div>
+    </a>
+
+    <!-- CENTER ZONE - MAIN NAVIGATION -->
+    <nav class="header-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="collections.html" class="nav-link">Gallery</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+    </nav>
+
+    <!-- RIGHT ZONE - USER ACTIONS -->
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+      <a href="login.html" class="btn-outline">Login</a>
+      <a href="register.html" class="btn-primary">Register</a>
     </div>
 
-    <div class="container mobile-drawer" aria-label="Mobile navigation">
-      <a data-nav href="index.html">Home</a>
-      <a data-nav href="home2.html">Home 2</a>
-      <a data-nav href="collections.html">Collections</a>
-      <a data-nav href="design-studio.html">Design Studio</a>
-      <a data-nav href="pricing.html">Pricing</a>
-      <a data-nav href="dashboard.html">Dashboard</a>
-      <a data-nav href="contact.html">Contact</a>
-      <div class="divider"></div>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
-    </div>
+    <!-- MOBILE HAMBURGER -->
+    <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </header>
 
-  <div class="banner" role="banner" style="background-image:linear-gradient(135deg, rgba(214,180,106,0.14), transparent 60%), url('assets/images/dashboard-bg.jpg');">
+  <!-- MOBILE SLIDE-IN MENU -->
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <div class="brand-badge">
+          <i class="fa-solid fa-gem" aria-hidden="true"></i>
+        </div>
+        <div class="brand-text">
+          <strong>Custom Jewelry Designer</strong>
+        </div>
+        <button class="mobile-menu-close" type="button" aria-label="Close mobile menu">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+      <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="collections.html" class="mobile-nav-link">Gallery</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
+      </nav>
+      <div class="mobile-menu-actions">
+        <a href="login.html" class="btn-outline mobile-btn">Login</a>
+        <a href="register.html" class="btn-primary mobile-btn">Register</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="banner" role="banner"
+    style="background-image:linear-gradient(135deg, rgba(214,180,106,0.14), transparent 60%), url('assets/images/dashboard-bg.jpg');">
     <div class="container banner-inner">
       <div class="eyebrow">Admin / Designer Dashboard</div>
       <h1>Manage requests, approvals, files, and payments</h1>
-      <p class="kicker">Frontend demo: request data is pulled from local storage (created via Design Studio). Use the client dashboard for client-facing actions.</p>
+      <p class="kicker">Frontend demo: request data is pulled from local storage (created via Design Studio). Use the
+        client dashboard for client-facing actions.</p>
     </div>
   </div>
 
@@ -84,8 +120,10 @@
           </table>
           <div class="divider"></div>
           <div class="hero-actions">
-            <a class="btn" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Create test request</a>
-            <a class="btn ghost" href="dashboard.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Back to client dashboard</a>
+            <a class="btn" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
+                aria-hidden="true"></i>Create test request</a>
+            <a class="btn ghost" href="dashboard.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Back to
+              client dashboard</a>
           </div>
         </div>
       </div>
@@ -100,7 +138,8 @@
             <h3>Concept review</h3>
             <p>Use approvals to maintain a single source of truth for client sign-off.</p>
             <div class="divider"></div>
-            <span class="badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Track: Pending → Approved → Revision</span>
+            <span class="badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Track: Pending → Approved →
+              Revision</span>
           </div>
           <div class="card pad">
             <h3>Client communication</h3>
@@ -142,7 +181,8 @@
             <h3>Stage completion</h3>
             <p>Track deposit, fabrication, and final payment completion.</p>
             <div class="divider"></div>
-            <a class="btn" href="pricing.html"><i class="fa-solid fa-receipt" aria-hidden="true"></i>Open pricing stages</a>
+            <a class="btn" href="pricing.html"><i class="fa-solid fa-receipt" aria-hidden="true"></i>Open pricing
+              stages</a>
           </div>
           <div class="card pad">
             <h3>Admin action</h3>
@@ -159,10 +199,22 @@
         <div class="eyebrow">Timeline</div>
         <h2>Project timeline</h2>
         <div class="grid cols-4" style="margin-top:16px;">
-          <div class="card pad"><h3>Intake</h3><p>Collect notes, sizes, and references.</p></div>
-          <div class="card pad"><h3>Concept</h3><p>Preview and refinement rounds.</p></div>
-          <div class="card pad"><h3>Fabrication</h3><p>Stone selection and production.</p></div>
-          <div class="card pad"><h3>Finishing</h3><p>Polish, QA, and delivery prep.</p></div>
+          <div class="card pad">
+            <h3>Intake</h3>
+            <p>Collect notes, sizes, and references.</p>
+          </div>
+          <div class="card pad">
+            <h3>Concept</h3>
+            <p>Preview and refinement rounds.</p>
+          </div>
+          <div class="card pad">
+            <h3>Fabrication</h3>
+            <p>Stone selection and production.</p>
+          </div>
+          <div class="card pad">
+            <h3>Finishing</h3>
+            <p>Polish, QA, and delivery prep.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -182,11 +234,13 @@
               <span class="badge"><i class="fa-solid fa-star" aria-hidden="true"></i>Satisfaction</span>
             </div>
           </div>
-          <div class="card pad" style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
+          <div class="card pad"
+            style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
             <h3>Next actions</h3>
             <p>Prioritize new requests, request missing details, and progress approvals.</p>
             <div class="hero-actions">
-              <a class="btn primary" href="dashboard.html"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Approvals</a>
+              <a class="btn primary" href="dashboard.html"><i class="fa-solid fa-circle-check"
+                  aria-hidden="true"></i>Approvals</a>
               <a class="btn" href="contact.html"><i class="fa-solid fa-headset" aria-hidden="true"></i>Support</a>
             </div>
           </div>
@@ -200,7 +254,8 @@
       <div class="footer-grid">
         <div>
           <h3>Custom Jewelry Designer</h3>
-          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.</p>
+          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.
+          </p>
           <div class="social" aria-label="Social links">
             <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
             <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
@@ -255,6 +310,8 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>

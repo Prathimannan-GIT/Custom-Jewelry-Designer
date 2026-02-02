@@ -9,11 +9,12 @@ class PremiumHeader {
     this.mobileMenuClose = document.querySelector('.mobile-menu-close');
     this.mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     this.navLinks = document.querySelectorAll('.nav-link');
-    
+
     this.isMenuOpen = false;
     this.bindEvents();
     this.setActivePage();
     this.handleScroll();
+    this.initTheme();
   }
 
   bindEvents() {
@@ -52,6 +53,12 @@ class PremiumHeader {
     });
 
     window.addEventListener('resize', () => this.handleResize());
+
+    // Theme Toggle Event
+    const toggleBtn = document.querySelector('.theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => this.toggleTheme());
+    }
   }
 
   toggleMobileMenu() {
@@ -67,7 +74,8 @@ class PremiumHeader {
     this.mobileMenuOverlay.classList.add('active');
     this.mobileMenuToggle.classList.add('active');
     document.body.style.overflow = 'hidden';
-    
+
+    // Accessibility: Focus on close button when menu opens
     setTimeout(() => {
       if (this.mobileMenuClose) {
         this.mobileMenuClose.focus();
@@ -83,30 +91,25 @@ class PremiumHeader {
   }
 
   handleNavClick(e, link) {
-    this.navLinks.forEach(navLink => navLink.classList.remove('active'));
-    this.mobileNavLinks.forEach(navLink => navLink.classList.remove('active'));
-    
-    link.classList.add('active');
-    
+    // Current behavior: just update the active page in storage
+    // But if it's already on the page, we don't need to prevent default
     localStorage.setItem('activePage', link.getAttribute('href'));
   }
 
   setActivePage() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const activePage = localStorage.getItem('activePage') || currentPage;
-    
+    const fullPath = window.location.pathname;
+    const currentPage = fullPath.substring(fullPath.lastIndexOf('/') + 1) || 'index.html';
+
     this.navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === activePage || 
-          (activePage === '' && link.getAttribute('href') === 'index.html')) {
+      if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
       }
     });
 
     this.mobileNavLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === activePage || 
-          (activePage === '' && link.getAttribute('href') === 'index.html')) {
+      if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
       }
     });
@@ -115,16 +118,18 @@ class PremiumHeader {
   handleScroll() {
     let lastScrollTop = 0;
     const header = document.querySelector('.premium-header');
-    
+
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        header.style.transform = 'translateY(-100%)';
-      } else {
-        header.style.transform = 'translateY(0)';
+
+      if (header) {
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          header.style.transform = 'translateY(0)';
+        }
       }
-      
+
       lastScrollTop = scrollTop;
     });
   }
@@ -133,6 +138,18 @@ class PremiumHeader {
     if (window.innerWidth > 768 && this.isMenuOpen) {
       this.closeMobileMenu();
     }
+  }
+
+  initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+  toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
   }
 }
 

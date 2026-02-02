@@ -1,28 +1,35 @@
 <!doctype html>
 <html lang="en" data-theme="dark" data-role="client">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Design Studio | Custom Jewelry Designer</title>
-  <meta name="description" content="Client collaboration workspace: customize jewelry, upload files, preview, and submit design requests." />
+  <meta name="description"
+    content="Client collaboration workspace: customize jewelry, upload files, preview, and submit design requests." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
-<body>
+
+<body class="interior-page">
+
   <header class="premium-header">
     <!-- LEFT ZONE - BRAND -->
-    <div class="header-brand">
+    <a href="index.html" class="header-brand">
       <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
       </div>
       <div class="brand-text">
         <strong>Custom Jewelry Designer</strong>
       </div>
-    </div>
+    </a>
+
 
     <!-- CENTER ZONE - MAIN NAVIGATION -->
     <nav class="header-nav" role="navigation" aria-label="Main navigation">
@@ -38,9 +45,14 @@
 
     <!-- RIGHT ZONE - USER ACTIONS -->
     <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
       <a href="login.html" class="btn-outline">Login</a>
       <a href="register.html" class="btn-primary">Register</a>
     </div>
+
 
     <!-- MOBILE HAMBURGER -->
     <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
@@ -81,11 +93,13 @@
     </div>
   </div>
 
-  <div class="banner" role="banner" style="margin-top: 80px;">
+  <div class="banner" role="banner">
+
     <div class="container banner-inner">
       <div class="eyebrow">Design Studio</div>
       <h1>Client collaboration workspace</h1>
-      <p class="kicker">Choose type, metal, and gemstone. Add notes, upload references, preview, and submit your request.</p>
+      <p class="kicker">Choose type, metal, and gemstone. Add notes, upload references, preview, and submit your
+        request.</p>
     </div>
   </div>
 
@@ -179,7 +193,8 @@
           <div class="card pad">
             <div class="field">
               <label for="designNotes">Design notes</label>
-              <textarea id="designNotes" placeholder="Describe style, size, stone shape, engraving, budget, deadlines..."></textarea>
+              <textarea id="designNotes"
+                placeholder="Describe style, size, stone shape, engraving, budget, deadlines..."></textarea>
               <div class="helper">Tip: include ring size, preferred metal tone, and inspiration references.</div>
             </div>
           </div>
@@ -275,13 +290,17 @@
 
     <section class="section" aria-label="Submit design request">
       <div class="container">
-        <div class="card pad" style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
+        <div class="card pad"
+          style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
           <div class="eyebrow">Final step</div>
           <h2>Submit design request</h2>
-          <p class="kicker">Submitting creates a request visible in the Dashboard (and in Admin/Designer mode for review).</p>
+          <p class="kicker">Submitting creates a request visible in the Dashboard (and in Admin/Designer mode for
+            review).</p>
           <div class="hero-actions">
-            <button id="submitDesign" class="btn primary" type="button"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Submit Request</button>
-            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>Go to Dashboard</a>
+            <button id="submitDesign" class="btn primary" type="button"><i class="fa-solid fa-paper-plane"
+                aria-hidden="true"></i>Submit Request</button>
+            <a class="btn" href="dashboard.html"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>Go to
+              Dashboard</a>
           </div>
         </div>
       </div>
@@ -293,7 +312,8 @@
       <div class="footer-grid">
         <div>
           <h3>Custom Jewelry Designer</h3>
-          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.</p>
+          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.
+          </p>
           <div class="social" aria-label="Social links">
             <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
             <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
@@ -351,4 +371,5 @@
   <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>

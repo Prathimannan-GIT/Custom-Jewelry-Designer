@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-theme="dark" data-role="client">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,22 +8,27 @@
   <meta name="description" content="Explore rings, necklaces, earrings, bracelets, and custom orders." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
-<body>
+
+<body class="interior-page">
+
   <header class="premium-header">
     <!-- LEFT ZONE - BRAND -->
-    <div class="header-brand">
+    <a href="index.html" class="header-brand">
       <div class="brand-badge">
         <i class="fa-solid fa-gem" aria-hidden="true"></i>
       </div>
       <div class="brand-text">
         <strong>Custom Jewelry Designer</strong>
       </div>
-    </div>
+    </a>
+
 
     <!-- CENTER ZONE - MAIN NAVIGATION -->
     <nav class="header-nav" role="navigation" aria-label="Main navigation">
@@ -38,9 +44,14 @@
 
     <!-- RIGHT ZONE - USER ACTIONS -->
     <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
       <a href="login.html" class="btn-outline">Login</a>
       <a href="register.html" class="btn-primary">Register</a>
     </div>
+
 
     <!-- MOBILE HAMBURGER -->
     <button class="mobile-menu-toggle" type="button" aria-label="Toggle mobile menu">
@@ -81,11 +92,13 @@
     </div>
   </div>
 
-  <div class="banner" role="banner" style="margin-top: 80px;">
+  <div class="banner" role="banner">
+
     <div class="container banner-inner">
       <div class="eyebrow">Collections</div>
       <h1>Explore refined starting points</h1>
-      <p class="kicker">Every collection can be customized in the Design Studio—metal, gemstone, proportions, and finishing.</p>
+      <p class="kicker">Every collection can be customized in the Design Studio—metal, gemstone, proportions, and
+        finishing.</p>
     </div>
   </div>
 
@@ -95,9 +108,30 @@
         <div class="eyebrow">Rings</div>
         <h2>Rings Collection</h2>
         <div class="grid cols-3" style="margin-top:16px;">
-          <article class="card"><div class="media" style="background-image:url('assets/images/solitaire-engagement-rings-2.jpg');"></div><div class="card-header"><h3>Solitaire</h3><p>Focused brilliance with timeless proportion.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/halo.jpg');"></div><div class="card-header"><h3>Halo</h3><p>Enhanced sparkle with balanced elegance.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/signet.jpg');"></div><div class="card-header"><h3>Signet</h3><p>Modern heritage with optional engraving.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/solitaire-engagement-rings-2.jpg');"></div>
+            <div class="card-header">
+              <h3>Solitaire</h3>
+              <p>Focused brilliance with timeless proportion.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/halo.jpg');"></div>
+            <div class="card-header">
+              <h3>Halo</h3>
+              <p>Enhanced sparkle with balanced elegance.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/signet.jpg');"></div>
+            <div class="card-header">
+              <h3>Signet</h3>
+              <p>Modern heritage with optional engraving.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
         </div>
       </div>
     </section>
@@ -107,9 +141,30 @@
         <div class="eyebrow">Necklaces</div>
         <h2>Necklaces Collection</h2>
         <div class="grid cols-3" style="margin-top:16px;">
-          <article class="card"><div class="media" style="background-image:url('assets/images/halo\ pendants.webp');"></div><div class="card-header"><h3>Halo Pendant</h3><p>A refined center stone with delicate glow.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/station\ chain.webp');"></div><div class="card-header"><h3>Station Chain</h3><p>Minimal sparkle spaced for elegance.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/statement\ drop.jpg');"></div><div class="card-header"><h3>Statement Drop</h3><p>Architectural presence with modern restraint.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/halo\ pendants.webp');"></div>
+            <div class="card-header">
+              <h3>Halo Pendant</h3>
+              <p>A refined center stone with delicate glow.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/station\ chain.webp');"></div>
+            <div class="card-header">
+              <h3>Station Chain</h3>
+              <p>Minimal sparkle spaced for elegance.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/statement\ drop.jpg');"></div>
+            <div class="card-header">
+              <h3>Statement Drop</h3>
+              <p>Architectural presence with modern restraint.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
         </div>
       </div>
     </section>
@@ -119,9 +174,30 @@
         <div class="eyebrow">Earrings</div>
         <h2>Earrings Collection</h2>
         <div class="grid cols-3" style="margin-top:16px;">
-          <article class="card"><div class="media" style="background-image:url('assets/images/studs.jpg');"></div><div class="card-header"><h3>Studs</h3><p>Subtle brilliance for daily wear.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/huggies.avif');"></div><div class="card-header"><h3>Huggies</h3><p>Close fit with refined comfort.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/drop\ earrings.jpg');"></div><div class="card-header"><h3>Drop Earrings</h3><p>Length and light for elevated evenings.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/studs.jpg');"></div>
+            <div class="card-header">
+              <h3>Studs</h3>
+              <p>Subtle brilliance for daily wear.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/huggies.avif');"></div>
+            <div class="card-header">
+              <h3>Huggies</h3>
+              <p>Close fit with refined comfort.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/drop\ earrings.jpg');"></div>
+            <div class="card-header">
+              <h3>Drop Earrings</h3>
+              <p>Length and light for elevated evenings.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
         </div>
       </div>
     </section>
@@ -131,9 +207,30 @@
         <div class="eyebrow">Bracelets</div>
         <h2>Bracelets Collection</h2>
         <div class="grid cols-3" style="margin-top:16px;">
-          <article class="card"><div class="media" style="background-image:url('assets/images/tennis\ bracelet.webp');"></div><div class="card-header"><h3>Tennis Bracelet</h3><p>Even brilliance with premium finishing.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/cuff.jpg');"></div><div class="card-header"><h3>Cuff</h3><p>Modern silhouette with optional stones.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
-          <article class="card"><div class="media" style="background-image:url('assets/images/chain.jpg');"></div><div class="card-header"><h3>Chain Bracelet</h3><p>Minimal elegance with bespoke links.</p></div><div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div></article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/tennis\ bracelet.webp');"></div>
+            <div class="card-header">
+              <h3>Tennis Bracelet</h3>
+              <p>Even brilliance with premium finishing.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/cuff.jpg');"></div>
+            <div class="card-header">
+              <h3>Cuff</h3>
+              <p>Modern silhouette with optional stones.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
+          <article class="card">
+            <div class="media" style="background-image:url('assets/images/chain.jpg');"></div>
+            <div class="card-header">
+              <h3>Chain Bracelet</h3>
+              <p>Minimal elegance with bespoke links.</p>
+            </div>
+            <div class="card-footer"><a class="btn small" href="design-studio.html">Customize</a></div>
+          </article>
         </div>
       </div>
     </section>
@@ -160,13 +257,16 @@
 
     <section class="section" aria-label="Explore more CTA">
       <div class="container">
-        <div class="card pad" style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
+        <div class="card pad"
+          style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03));">
           <div class="eyebrow">Next</div>
           <h2>Want something truly original?</h2>
           <p class="kicker">Jump into the Design Studio to create a request and collaborate with your designer.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Design Studio</a>
-            <a class="btn" href="pricing.html"><i class="fa-solid fa-receipt" aria-hidden="true"></i>Pricing & Stages</a>
+            <a class="btn primary" href="design-studio.html"><i class="fa-solid fa-wand-magic-sparkles"
+                aria-hidden="true"></i>Design Studio</a>
+            <a class="btn" href="pricing.html"><i class="fa-solid fa-receipt" aria-hidden="true"></i>Pricing &
+              Stages</a>
           </div>
         </div>
       </div>
@@ -178,7 +278,8 @@
       <div class="footer-grid">
         <div>
           <h3>Custom Jewelry Designer</h3>
-          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.</p>
+          <p>Luxury custom jewelry design, built on clarity: collaboration, approvals, and secure milestone payments.
+          </p>
           <div class="social" aria-label="Social links">
             <a href="contact.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
             <a href="contact.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
@@ -236,4 +337,5 @@
   <script src="js/premium-header.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>
