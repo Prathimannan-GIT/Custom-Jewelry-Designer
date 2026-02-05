@@ -1,4 +1,4 @@
-/* Custom Jewelry Designer – Vanilla JS Interactions */
+/* Jewel Design – Vanilla JS Interactions */
 
 (function () {
   "use strict";
@@ -114,7 +114,7 @@
     if (type === 'success') return 'Saved successfully.';
     if (type === 'warn') return 'Please review the details.';
     if (type === 'error') return 'Something went wrong.';
-    return 'Custom Jewelry Designer is ready.';
+    return 'Jewel Design is ready.';
   }
 
   function escapeHtml(str) {

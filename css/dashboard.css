@@ -58,6 +58,10 @@
   font-size: 1.1rem;
   font-weight: 600;
   font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sidebar-top {

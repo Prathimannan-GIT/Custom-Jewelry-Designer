@@ -25,10 +25,6 @@ html[data-theme="light"] .premium-header {
   border-bottom: 1px solid rgba(18, 18, 20, 0.1);
 }
 
-html[data-theme="light"] .brand-text {
-  color: #121214;
-}
-
 html[data-theme="light"] .nav-link {
   color: #121214;
 }
@@ -59,16 +55,16 @@ html[data-theme="light"] .mobile-nav-link {
 }
 
 .brand-badge {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, #d6b46a, #8b7355);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(214, 180, 106, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-shrink: 0;
+  color: white;
+  font-size: 20px;
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease);
   /* Prevent shrinking */
 }
 
@@ -84,9 +80,12 @@ html[data-theme="light"] .mobile-nav-link {
 
 .brand-text {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1.2;
   display: flex;
   align-items: center;
@@ -389,12 +388,12 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
   }
 
   .brand-badge {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
 
   .brand-badge i {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .header-nav {
@@ -457,8 +456,8 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
   }
 
   .brand-badge {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .brand-badge i {
@@ -483,8 +482,8 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
   }
 
   .brand-badge {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
   }
 
   .brand-badge i {

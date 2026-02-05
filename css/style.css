@@ -1036,8 +1036,8 @@ textarea:focus {
 }
 
 .sidebar-brand .brand-badge {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, var(--gold), var(--gold-2));
   border-radius: 50%;
   display: flex;
@@ -1051,7 +1051,10 @@ textarea:focus {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text);
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sidebar-top {
@@ -1308,7 +1311,7 @@ textarea:focus {
 }
 
 .footer .footer-brand h3 {
-  font-size: 24px;
+  font-size: 1.1rem;
   background: linear-gradient(135deg, var(--gold), var(--gold-2));
   -webkit-background-clip: text;
   background-clip: text;
@@ -1605,26 +1608,31 @@ html[data-role="admin"] .client-only {
 }
 
 .auth-brand .brand-badge {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, var(--gold), var(--gold-2));
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(214, 180, 106, 0.25);
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 6px 16px rgba(214, 180, 106, 0.25);
 }
 
 .auth-brand .brand-badge i {
   color: white;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .auth-brand .brand-text {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 1.4rem;
-  color: var(--text);
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
 }
 
@@ -1824,6 +1832,20 @@ html[data-role="admin"] .client-only {
 
   .auth-header h2 {
     font-size: 1.75rem;
+  }
+
+  /* Auth Brand Responsive */
+  .auth-brand .brand-badge {
+    width: 36px;
+    height: 36px;
+  }
+
+  .auth-brand .brand-badge i {
+    font-size: 18px;
+  }
+
+  .auth-brand .brand-text {
+    font-size: 1rem;
   }
 }
 
@@ -2191,6 +2213,22 @@ html[data-role="admin"] .client-only {
   * {
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Small Mobile Auth Brand */
+@media (max-width: 480px) {
+  .auth-brand .brand-badge {
+    width: 32px;
+    height: 32px;
+  }
+
+  .auth-brand .brand-badge i {
+    font-size: 16px;
+  }
+
+  .auth-brand .brand-text {
+    font-size: 0.9rem;
   }
 }
 
