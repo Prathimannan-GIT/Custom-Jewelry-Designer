@@ -13,6 +13,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
@@ -92,12 +93,16 @@
   </div>
 
   <main>
-    <section class="section">
+    <section class="section" style="background: linear-gradient(135deg, rgba(214, 180, 106, 0.03), transparent 40%);">
       <div class="container">
         <div class="eyebrow">Message</div>
         <h2 style="text-align: center;">Send a request</h2>
-        <div class="grid cols-2" style="margin-top:24px; align-items:start;">
-          <div class="card pad">
+        <div class="contact-layout"
+          style="margin-top:48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+          <div class="contact-form-panel"
+            style="padding: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);">
+            <h3 style="margin-bottom: 32px; color: var(--gold); font-size: 1.4rem; text-align: center;">Get in Touch
+            </h3>
             <form class="form" data-validate>
               <div class="field">
                 <label for="cName">Full name</label>
@@ -108,40 +113,103 @@
                 <input id="cEmail" type="email" required placeholder="you@example.com" />
               </div>
               <div class="field">
-                <label for="cMsg">Message</label>
-                <textarea id="cMsg" required placeholder="Tell us about your project..."></textarea>
+                <label for="cPhone">Phone (optional)</label>
+                <input id="cPhone" type="tel" placeholder="+1 (555) 000-0000" />
               </div>
-              <button class="btn primary" type="submit" style="width: 100%;"><i class="fa-solid fa-paper-plane"
-                  aria-hidden="true"></i>Send message</button>
+              <div class="field">
+                <label for="cMsg">Message</label>
+                <textarea id="cMsg" required placeholder="Tell us about your project..." rows="5"></textarea>
+              </div>
+              <button class="btn primary" type="submit"
+                style="margin: 32px auto 0; display: flex; width: 220px; min-width: 220px; justify-content: center; align-items: center; padding: 14px 24px;"><i
+                  class="fa-solid fa-paper-plane" aria-hidden="true"></i>Send message</button>
             </form>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Direct Support</h3>
-            <p>Our concierge team is available for immediate assistance.</p>
-            <div class="divider"></div>
-            <p style="font-weight: 600; color: var(--gold);">support@aurum-atelier.example</p>
-            <p>+1 555-0123</p>
-            <div class="divider"></div>
-            <div class="social" style="justify-content: center;">
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <div class="contact-info-panel" style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="info-card"
+              style="padding: 40px; background: var(--trans-white); border: 1px solid var(--border); border-radius: var(--radius); text-align: center;">
+              <div class="info-icon"
+                style="width: 70px; height: 70px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                <i class="fa-solid fa-envelope" style="color: var(--black); font-size: 28px;"></i>
+              </div>
+              <h3 style="margin-bottom: 16px; color: var(--text); font-size: 1.2rem;">Email Support</h3>
+              <p style="color: var(--muted); margin-bottom: 20px; line-height: 1.6;">Our concierge team responds within
+                24 hours</p>
+              <a href="mailto:support@aurum-atelier.example"
+                style="color: var(--gold); font-weight: 600;">support@aurum-atelier.example</a>
+            </div>
+            <div class="info-card"
+              style="padding: 40px; background: var(--trans-white); border: 1px solid var(--border); border-radius: var(--radius); text-align: center;">
+              <div class="info-icon"
+                style="width: 70px; height: 70px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                <i class="fa-solid fa-phone" style="color: var(--black); font-size: 28px;"></i>
+              </div>
+              <h3 style="margin-bottom: 16px; color: var(--text); font-size: 1.2rem;">Phone Support</h3>
+              <p style="color: var(--muted); margin-bottom: 20px; line-height: 1.6;">Mon–Sat, 10am–6pm EST</p>
+              <a href="tel:+15550123" style="color: var(--gold); font-weight: 600;">+1 555-0123</a>
+            </div>
+            <div class="info-card"
+              style="padding: 40px; background: var(--trans-white); border: 1px solid var(--border); border-radius: var(--radius); text-align: center;">
+              <div class="info-icon"
+                style="width: 70px; height: 70px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                <i class="fa-solid fa-share-nodes" style="color: var(--black); font-size: 28px;"></i>
+              </div>
+              <h3 style="margin-bottom: 16px; color: var(--text); font-size: 1.2rem;">Social Media</h3>
+              <p style="color: var(--muted); margin-bottom: 24px; line-height: 1.6;">Follow our latest creations</p>
+              <div class="social" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                <a href="#"
+                  style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border); border-radius: 50%; color: var(--text); transition: all 0.3s var(--ease); flex-shrink: 0;"><i
+                    class="fa-brands fa-instagram"></i></a>
+                <a href="#"
+                  style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border); border-radius: 50%; color: var(--text); transition: all 0.3s var(--ease); flex-shrink: 0;"><i
+                    class="fa-brands fa-pinterest"></i></a>
+                <a href="#"
+                  style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border); border-radius: 50%; color: var(--text); transition: all 0.3s var(--ease); flex-shrink: 0;"><i
+                    class="fa-brands fa-youtube"></i></a>
+                <a href="#"
+                  style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border); border-radius: 50%; color: var(--text); transition: all 0.3s var(--ease); flex-shrink: 0;"><i
+                    class="fa-brands fa-linkedin"></i></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-label="Studio location map">
+    <section class="section" aria-label="Studio location map"
+      style="background: radial-gradient(800px 400px at 30% 30%, rgba(214, 180, 106, 0.08), transparent 60%);">
       <div class="container">
         <div class="eyebrow">Location</div>
         <h2 style="text-align: center;">Visit our studio</h2>
-        <div class="card" style="overflow: hidden; margin-top: 24px;">
-          <div id="map" style="height: 400px; width: 100%; position: relative; z-index: 1;"></div>
-          <div class="card-header" style="text-align: center; padding: 30px;">
-            <h3>New York Atelier</h3>
-            <p>123 Jewelry Lane, Manhattan, NY 10001</p>
-            <span class="badge" style="margin-top: 10px;">Mon–Sat, 10am–6pm</span>
+        <div class="location-card"
+          style="margin-top: 48px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; max-width: 1000px; margin-left: auto; margin-right: auto; box-shadow: var(--shadow);">
+          <div class="map-container" style="position: relative; height: 450px;">
+            <div id="map" style="height: 100%; width: 100%; position: relative; z-index: 1;"></div>
+          </div>
+          <div class="location-info" style="padding: 60px 40px; text-align: center; background: var(--trans-white);">
+            <div class="location-header" style="margin-bottom: 40px;">
+              <div class="location-icon"
+                style="width: 90px; height: 90px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; box-shadow: 0 8px 24px rgba(214, 180, 106, 0.3);">
+                <i class="fa-solid fa-location-dot" style="color: var(--black); font-size: 36px;"></i>
+              </div>
+              <h3 style="margin-bottom: 16px; font-size: 1.6rem; color: var(--text);">New York Atelier</h3>
+              <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 20px; line-height: 1.6;">123 Jewelry
+                Lane, Manhattan, NY 10001</p>
+              <div class="location-hours"
+                style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px;">
+                <i class="fa-solid fa-clock" style="color: var(--gold);"></i>
+                <span style="font-weight: 600;">Mon–Sat, 10am–6pm</span>
+              </div>
+            </div>
+            <div class="location-actions" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+              <a class="btn" href="https://maps.google.com/?q=123+Jewelry+Lane+Manhattan+NY+10001" target="_blank"
+                style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-directions"></i> Get Directions
+              </a>
+              <a class="btn primary" href="contact.html" style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-calendar"></i> Book Appointment
+              </a>
+            </div>
           </div>
         </div>
       </div>

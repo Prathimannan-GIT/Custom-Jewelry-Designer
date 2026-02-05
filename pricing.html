@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
@@ -91,63 +92,130 @@
   </div>
 
   <main>
-    <section class="section">
+    <section class="section" style="background: linear-gradient(135deg, rgba(214, 180, 106, 0.03), transparent 50%);">
       <div class="container">
         <div class="eyebrow">Base pricing</div>
         <h2 style="text-align: center;">Custom jewelry tiers</h2>
-        <div class="grid cols-3" style="margin-top:24px;">
-          <div class="card pad" style="text-align: center;">
-            <h3>Essential</h3>
-            <p>Minimal design complexity and classic settings.</p>
-            <div class="divider"></div>
-            <span class="badge">Starting from $1,500</span>
+        <div class="pricing-tiers"
+          style="margin-top:48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; max-width: 1000px; margin-left: auto; margin-right: auto; align-items: stretch;">
+          <div class="pricing-tier"
+            style="text-align: center; padding: 40px 24px; border: 2px solid var(--border); border-radius: var(--radius); background: var(--surface); position: relative; transition: all 0.3s var(--ease); display: flex; flex-direction: column; height: 100%;">
+            <div class="tier-name" style="font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 8px;">
+              Essential</div>
+            <div class="tier-description" style="color: var(--muted); margin-bottom: 24px;">Minimal design complexity
+              and classic settings.</div>
+            <div class="tier-price" style="font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 24px;">
+              $1,500<span style="font-size: 1rem; font-weight: 400; color: var(--muted);"> starting from</span></div>
+            <div class="tier-features" style="text-align: left; margin-bottom: 32px; flex-grow: 1;">
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> Classic designs</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> Standard materials</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> 4-6 weeks delivery</div>
+            </div>
+            <a class="btn" href="design-studio.html" style="width: 100%; margin-top: auto;">Get Started</a>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Signature</h3>
-            <p>Refined silhouette and premium finishing.</p>
-            <div class="divider"></div>
-            <span class="badge">Starting from $3,500</span>
+          <div class="pricing-tier featured"
+            style="text-align: center; padding: 40px 24px; position: relative; transition: all 0.3s var(--ease); display: flex; flex-direction: column; height: 100%; border: 2px solid var(--gold); box-shadow: 0 8px 25px rgba(214, 180, 106, 0.15);">
+            <div class="featured-badge"
+              style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+              Most Popular</div>
+            <div class="tier-name"
+              style="font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 8px; margin-top: 8px;">
+              Signature</div>
+            <div class="tier-description" style="color: var(--muted); margin-bottom: 24px;">Refined silhouette and
+              premium finishing.</div>
+            <div class="tier-price" style="font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 24px;">
+              $3,500<span style="font-size: 1rem; font-weight: 400; color: var(--muted);"> starting from</span></div>
+            <div class="tier-features" style="text-align: left; margin-bottom: 32px; flex-grow: 1;">
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> Custom designs</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> Premium materials</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> 6-8 weeks delivery</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> 3D preview</div>
+            </div>
+            <a class="btn primary" href="design-studio.html" style="width: 100%; margin-top: auto;">Get Started</a>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Atelier</h3>
-            <p>Complex settings and advanced craft.</p>
-            <div class="divider"></div>
-            <span class="badge">Starting from $7,500</span>
+          <div class="pricing-tier"
+            style="text-align: center; padding: 40px 24px; position: relative; transition: all 0.3s var(--ease); display: flex; flex-direction: column; height: 100%;">
+            <div class="tier-name" style="font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 8px;">
+              Atelier</div>
+            <div class="tier-description" style="color: var(--muted); margin-bottom: 24px;">Complex settings and
+              advanced craft.</div>
+            <div class="tier-price" style="font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 24px;">
+              $7,500<span style="font-size: 1rem; font-weight: 400; color: var(--muted);"> starting from</span></div>
+            <div class="tier-features" style="text-align: left; margin-bottom: 32px; flex-grow: 1;">
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> Bespoke creations</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> Luxury materials</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> 8-12 weeks delivery</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> VR preview</div>
+              <div style="margin-bottom: 12px; color: var(--muted);"><i class="fa-solid fa-check"
+                  style="color: var(--gold); margin-right: 8px;"></i> Designer consultation</div>
+            </div>
+            <a class="btn" href="design-studio.html" style="width: 100%; margin-top: auto;">Get Started</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-label="Payment stages">
+    <section class="section" aria-label="Payment stages"
+      style="background: radial-gradient(800px 400px at 70% 30%, rgba(214, 180, 106, 0.08), transparent 60%);">
       <div class="container">
         <div class="eyebrow">Progress</div>
         <h2 style="text-align: center;">Payment stages flow</h2>
-        <div id="payments" class="grid cols-2" style="margin-top:24px; align-items:start;">
-          <div class="card pad">
-            <h3>Stages</h3>
-            <div class="checkbox-group" style="margin-top:10px;">
-              <input type="checkbox" id="stage1" data-stage="s1" />
-              <label for="stage1">Deposit (reserve slot)</label>
+        <div class="payment-flow"
+          style="margin-top:48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1000px; margin-left: auto; margin-right: auto; align-items: stretch;">
+          <div class="stages-panel" style="padding: 32px; display: flex; flex-direction: column; height: 100%;">
+            <h3 style="margin-bottom: 24px; color: var(--gold);">Stages</h3>
+            <div class="stage-item"
+              style="margin-bottom: 20px; padding: 16px; background: var(--surface); border-radius: var(--radius-sm); border-left: 3px solid var(--gold);">
+              <div class="checkbox-group" style="margin-bottom: 8px;">
+                <input type="checkbox" id="stage1" data-stage="s1" />
+                <label for="stage1" style="font-weight: 600;">Deposit (reserve slot)</label>
+              </div>
+              <div style="color: var(--muted); font-size: 0.9rem;">25% of total project cost</div>
             </div>
-            <div class="checkbox-group">
-              <input type="checkbox" id="stage2" data-stage="s2" />
-              <label for="stage2">Fabrication (start creation)</label>
+            <div class="stage-item"
+              style="margin-bottom: 20px; padding: 16px; background: var(--surface); border-radius: var(--radius-sm); border-left: 3px solid var(--border);">
+              <div class="checkbox-group" style="margin-bottom: 8px;">
+                <input type="checkbox" id="stage2" data-stage="s2" />
+                <label for="stage2" style="font-weight: 600;">Fabrication (start creation)</label>
+              </div>
+              <div style="color: var(--muted); font-size: 0.9rem;">50% of total project cost</div>
             </div>
-            <div class="checkbox-group">
-              <input type="checkbox" id="stage3" data-stage="s3" />
-              <label for="stage3">Final balance (before delivery)</label>
+            <div class="stage-item"
+              style="margin-bottom: 20px; padding: 16px; background: var(--surface); border-radius: var(--radius-sm); border-left: 3px solid var(--border);">
+              <div class="checkbox-group" style="margin-bottom: 8px;">
+                <input type="checkbox" id="stage3" data-stage="s3" />
+                <label for="stage3" style="font-weight: 600;">Final balance (before delivery)</label>
+              </div>
+              <div style="color: var(--muted); font-size: 0.9rem;">25% of total project cost</div>
             </div>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Current Progress</h3>
-            <div class="progress" style="height: 12px; margin-top: 15px;">
-              <div id="paymentBar"
-                style="height: 100%; width: 0%; background: var(--gold); border-radius: 99px; transition: width 0.3s var(--ease);">
+          <div class="progress-panel"
+            style="padding: 32px; text-align: center; display: flex; flex-direction: column; height: 100%;">
+            <h3 style="margin-bottom: 24px; color: var(--gold);">Current Progress</h3>
+            <div class="progress-visual" style="position: relative; margin: 32px 0;">
+              <div class="progress"
+                style="height: 16px; background: rgba(255, 255, 255, 0.1); border-radius: 99px; overflow: hidden;">
+                <div id="paymentBar"
+                  style="height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--gold-2)); border-radius: 99px; transition: width 0.5s var(--ease);">
+                </div>
               </div>
             </div>
-            <div class="helper" id="paymentLabel" style="margin-top:15px; font-weight: 600;">0% complete</div>
-            <div class="divider"></div>
-            <a class="btn primary small" href="dashboard.html" style="width: 100%;">View Workflow</a>
+            <div class="progress-label" id="paymentLabel"
+              style="font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 16px;">0% complete</div>
+            <div class="progress-description" style="color: var(--muted); margin-bottom: 32px;">Select stages to see
+              progress</div>
+            <a class="btn primary" href="dashboard.html" style="width: 100%; margin-top: auto;">View Workflow</a>
           </div>
         </div>
       </div>
@@ -155,8 +223,7 @@
 
     <section class="section">
       <div class="container">
-        <div class="card pad"
-          style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03)); text-align: center; padding: 60px 40px;">
+        <div class="cta-section" style="text-align: center; padding: 60px 40px;">
           <div class="eyebrow">Start</div>
           <h2>Start your project</h2>
           <p class="kicker">Create a request in the Design Studio to receive a tailored quote.</p>

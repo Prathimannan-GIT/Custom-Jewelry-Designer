@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
@@ -21,89 +22,72 @@
 
   <div class="auth-page">
     <div class="auth-side-image" style="background-image: url('assets/images/luxury_jewelry_auth_bg.png');">
-
-      
       <div class="auth-side-content">
         <h2>"Crafting elegance, one detail at a time."</h2>
-        <p>— Join our studio to begin your bespoke journey.</p>
+        <p>Join our studio to begin your bespoke journey.</p>
       </div>
     </div>
 
-    <div class="auth-form-container"
-       style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
-      <a href="index.html" class="header-brand" style="margin-bottom: 40px; text-decoration: none;">
-        <div class="brand-badge"
-          style="background: var(--gold); color: white; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; margin-left: auto; margin-right: auto;">
-          <i class="fa-solid fa-gem" style="font-size: 24px;"></i>
-        </div>
-        <div class="brand-text" style="color: var(--text); font-weight: 700; font-size: 1.2rem; text-align: center;">
-          Custom Jewelry Designer
-        </div>
-      </a>
-      <div class="eyebrow">Join the Studio</div>
-      <h2>Create your account</h2>
-      <p>Register to manage designs, messaging, and secure payments.</p>
+    <div class="auth-form-container">
+      <div class="auth-content-inner">
+        <a href="index.html" class="auth-brand">
+          <div class="brand-badge">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <div class="brand-text">Custom Jewelry Designer</div>
+        </a>
 
-      <form class="form" data-validate style="margin-top: 30px;">
-        <div class="field">
-          <label for="rName">Full name</label>
-          <div style="position:relative;">
-            <i class="fa-solid fa-user"
-              style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
-            <input id="rName" required placeholder="Full name" style="padding-left:40px;" />
-          </div>
+        <div class="auth-header">
+          <div class="eyebrow">Join the Studio</div>
+          <h2>Create your account</h2>
+          <p>Register to manage designs and secure payments.</p>
         </div>
-        <div class="split">
-          <div class="field">
-            <label for="rEmail">Email</label>
-            <div style="position:relative;">
-              <i class="fa-solid fa-envelope"
-                style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
-              <input id="rEmail" type="email" required placeholder="you@example.com" style="padding-left:40px;" />
-            </div>
-          </div>
-          <div class="field">
-            <label for="rPhone">Phone</label>
-            <div style="position:relative;">
-              <i class="fa-solid fa-phone"
-                style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
-              <input id="rPhone" type="tel" required placeholder="+00 000 000 000" style="padding-left:40px;" />
-            </div>
-          </div>
-        </div>
-        <div class="split">
-          <div class="field">
-            <label for="rPass">Password</label>
-            <div style="position:relative;">
-              <i class="fa-solid fa-lock"
-                style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
-              <input id="rPass" type="password" required placeholder="••••••••" style="padding-left:40px;" />
-            </div>
-          </div>
-          <div class="field">
-            <label for="rPass2">Confirm password</label>
-            <div style="position:relative;">
-              <i class="fa-solid fa-lock"
-                style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
-              <input id="rPass2" type="password" required placeholder="••••••••" style="padding-left:40px;" />
-            </div>
-          </div>
-        </div>
-        <button class="btn primary" type="submit" style="width:100%; margin-top:10px;">
-          <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Create account
-        </button>
-      </form>
 
-      <div class="divider" style="margin: 30px 0;"><span>Or register with</span></div>
+        <form class="auth-form form" data-validate>
+          <div class="field">
+            <label for="rName">Full name</label>
+            <input id="rName" required placeholder="Full name" />
+          </div>
+          <div class="split">
+            <div class="field">
+              <label for="rEmail">Email</label>
+              <input id="rEmail" type="email" required placeholder="you@example.com" />
+            </div>
+            <div class="field">
+              <label for="rPhone">Phone</label>
+              <input id="rPhone" type="tel" required placeholder="+00 000 000 000" />
+            </div>
+          </div>
+          <div class="split">
+            <div class="field">
+              <label for="rPass">Password</label>
+              <input id="rPass" type="password" required placeholder="••••••••" />
+            </div>
+            <div class="field">
+              <label for="rPass2">Confirm password</label>
+              <input id="rPass2" type="password" required placeholder="••••••••" />
+            </div>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="agreeTerms" required>
+            <label for="agreeTerms">I agree to Terms & Conditions</label>
+          </div>
+          <button class="btn primary" type="submit">
+            <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Create account
+          </button>
+        </form>
 
-      <div class="grid cols-2">
-        <button class="btn" style="width:100%"><i class="fa-brands fa-google"></i> Google</button>
-        <button class="btn" style="width:100%"><i class="fa-brands fa-facebook"></i> Facebook</button>
+        <div class="divider" style="margin: 30px 0; width: 100%;"><span>Or register with</span></div>
+
+        <div class="grid cols-2" style="width: 100%; gap: 12px;">
+          <button class="btn" style="width:100%"><i class="fa-brands fa-google"></i> Google</button>
+          <button class="btn" style="width:100%"><i class="fa-brands fa-facebook"></i> Facebook</button>
+        </div>
+
+        <div class="auth-footer">
+          Already have an account? <a href="login.html" class="link">Login here</a>
+        </div>
       </div>
-
-      <p style="margin-top: 40px; text-align: center;">
-        Already have an account? <a href="login.html" class="link">Login here</a>
-      </p>
     </div>
   </div>
 

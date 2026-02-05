@@ -224,6 +224,36 @@ input:checked + .toggle-slider:before {
   transform: translateY(-1px);
 }
 
+/* New Design Card Styles */
+.new-design-card {
+  background: var(--surface);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  min-height: 280px;
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+}
+
+.new-design-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(214, 180, 106, 0.15);
+}
+
+.new-design-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.plus-icon {
+  transition: all 0.3s var(--ease);
+}
+
+.new-design-card:hover .plus-icon {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(214, 180, 106, 0.3);
+}
+
 /* Main Content */
 .dashboard-content {
   flex: 1;

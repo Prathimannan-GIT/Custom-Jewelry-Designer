@@ -365,11 +365,10 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
    RESPONSIVE BREAKPOINTS
    ================================ */
 
-/* Tablet View */
-@media (max-width: 1024px) {
+/* Tablet/Small Desktop View */
+@media (max-width: 1200px) {
   .premium-header {
-    padding: 0 1.5rem;
-    height: 70px;
+    padding: 0 1rem;
   }
 
   .header-nav {
@@ -377,25 +376,55 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
     margin: 0 0.5rem;
   }
 
-
   .nav-link {
-    padding: 6px 10px;
+    padding: 6px 8px;
     font-size: 0.8rem;
   }
+}
 
+@media (max-width: 1024px) {
+  .premium-header {
+    padding: 0 0.5rem;
+    height: 70px;
+  }
+
+  .brand-badge {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-badge i {
+    font-size: 14px;
+  }
+
+  .header-nav {
+    gap: 0px;
+    margin: 0 0.15rem;
+  }
+
+  .nav-link {
+    padding: 6px 4px;
+    font-size: 0.7rem;
+    letter-spacing: -0.015em;
+  }
 
   .brand-text {
-    font-size: 1.1rem;
+    font-size: 0.88rem;
   }
 
   .header-actions {
-    gap: 10px;
+    gap: 4px;
   }
 
   .btn-outline,
   .btn-primary {
-    padding: 8px 16px;
-    font-size: 0.85rem;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
   }
 }
 

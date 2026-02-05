@@ -42,6 +42,21 @@ function initSectionSwitching() {
       const targetElement = document.getElementById(targetSection);
       if (targetElement) {
         targetElement.classList.add('active');
+        
+        // Scroll to top of content area for better visibility
+        const dashboardContent = document.querySelector('.dashboard-content');
+        if (dashboardContent) {
+          dashboardContent.scrollTop = 0;
+        }
+        
+        // Smooth scroll to section if it's not immediately visible
+        setTimeout(() => {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+          });
+        }, 100);
       }
       
       // Close mobile sidebar after selection

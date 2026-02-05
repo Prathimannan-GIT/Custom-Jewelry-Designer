@@ -13,6 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-header.css" />
 </head>
@@ -93,95 +94,116 @@
   </div>
 
   <main>
-    <section class="section" aria-label="Historical timeline">
+    <section class="section" aria-label="Historical timeline"
+      style="background: linear-gradient(135deg, rgba(214, 180, 106, 0.05), transparent 40%);">
       <div class="container">
         <div class="eyebrow">Timeline</div>
         <h2>A legacy of innovation</h2>
         <p class="kicker">Our journey through decades of excellence, from humble beginnings to global recognition.</p>
-        <div class="grid cols-2" style="margin-top:24px;">
-          <div class="card pad" style="text-align: center;">
-            <h3><i class="fa-solid fa-hourglass-start" aria-hidden="true" style="color: var(--gold);"></i> The
-              Foundation (1948-1970)</h3>
-            <p>Marcus Blackwood established our first workshop in Manhattan's Diamond District, specializing in
-              hand-engraved signet rings and custom family crests.</p>
+        <div class="timeline-flow" style="margin-top:48px; position: relative;">
+          <div class="timeline-line"
+            style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--gold), transparent); transform: translateX(-50%);">
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3><i class="fa-solid fa-globe" aria-hidden="true" style="color: var(--gold);"></i> Global Expansion
-              (1971-1995)</h3>
-            <p>Under Eleanor Blackwood's leadership, we expanded internationally, opening ateliers in London's Mayfair
-              and Paris' Place Vendôme.</p>
+          <div class="timeline-item"
+            style="display: flex; align-items: center; margin-bottom: 48px; position: relative;">
+            <div class="timeline-content" style="flex: 1; text-align: right; padding-right: 40px;">
+              <h3 style="color: var(--gold); margin-bottom: 8px;"><i class="fa-solid fa-hourglass-start"
+                  aria-hidden="true" style="margin-right: 8px;"></i> The Foundation (1948-1970)</h3>
+              <p style="margin: 0; color: var(--muted);">Marcus Blackwood established our first workshop in Manhattan's
+                Diamond District, specializing in hand-engraved signet rings and custom family crests.</p>
+            </div>
+            <div class="timeline-dot"
+              style="width: 16px; height: 16px; background: var(--gold); border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); border: 3px solid var(--surface); z-index: 2;">
+            </div>
+            <div class="timeline-spacer" style="flex: 1;"></div>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3><i class="fa-solid fa-rocket" aria-hidden="true" style="color: var(--gold);"></i> Modern Renaissance
-              (1996-2020)</h3>
-            <p>James Blackwood revolutionized our craft by integrating CAD technology while preserving traditional
-              techniques, earning international design awards.</p>
+          <div class="timeline-item"
+            style="display: flex; align-items: center; margin-bottom: 48px; position: relative;">
+            <div class="timeline-spacer" style="flex: 1;"></div>
+            <div class="timeline-dot"
+              style="width: 16px; height: 16px; background: var(--gold); border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); border: 3px solid var(--surface); z-index: 2;">
+            </div>
+            <div class="timeline-content" style="flex: 1; text-align: left; padding-left: 40px;">
+              <h3 style="color: var(--gold); margin-bottom: 8px;"><i class="fa-solid fa-globe" aria-hidden="true"
+                  style="margin-right: 8px;"></i> Global Expansion (1971-1995)</h3>
+              <p style="margin: 0; color: var(--muted);">Under Eleanor Blackwood's leadership, we expanded
+                internationally, opening ateliers in London's Mayfair and Paris' Place Vendôme.</p>
+            </div>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3><i class="fa-solid fa-crown" aria-hidden="true" style="color: var(--gold);"></i> Contemporary Excellence
-              (2021-Present)</h3>
-            <p>Today, under Sophia Blackwood-Chen, we lead the industry in sustainable luxury and innovative jewelry
-              technology.</p>
+          <div class="timeline-item"
+            style="display: flex; align-items: center; margin-bottom: 48px; position: relative;">
+            <div class="timeline-content" style="flex: 1; text-align: right; padding-right: 40px;">
+              <h3 style="color: var(--gold); margin-bottom: 8px;"><i class="fa-solid fa-rocket" aria-hidden="true"
+                  style="margin-right: 8px;"></i> Modern Renaissance (1996-2020)</h3>
+              <p style="margin: 0; color: var(--muted);">James Blackwood revolutionized our craft by integrating CAD
+                technology while preserving traditional techniques, earning international design awards.</p>
+            </div>
+            <div class="timeline-dot"
+              style="width: 16px; height: 16px; background: var(--gold); border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); border: 3px solid var(--surface); z-index: 2;">
+            </div>
+            <div class="timeline-spacer" style="flex: 1;"></div>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3><i class="fa-solid fa-trophy" aria-hidden="true" style="color: var(--gold);"></i> Award-Winning Design
-              (2023)</h3>
-            <p>Recognized by the Global Luxury Council for outstanding achievement in bespoke jewelry design and client
-              experience.</p>
-          </div>
-          <div class="card pad" style="text-align: center;">
-            <h3><i class="fa-solid fa-lightbulb" aria-hidden="true" style="color: var(--gold);"></i> Innovation Lab
-              (2025-Beyond)</h3>
-            <p>Establishing a dedicated research facility to explore new alloys and setting techniques for the next
-              generation of jewelry.</p>
+          <div class="timeline-item"
+            style="display: flex; align-items: center; margin-bottom: 48px; position: relative;">
+            <div class="timeline-spacer" style="flex: 1;"></div>
+            <div class="timeline-dot"
+              style="width: 16px; height: 16px; background: var(--gold); border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); border: 3px solid var(--surface); z-index: 2;">
+            </div>
+            <div class="timeline-content" style="flex: 1; text-align: left; padding-left: 40px;">
+              <h3 style="color: var(--gold); margin-bottom: 8px;"><i class="fa-solid fa-crown" aria-hidden="true"
+                  style="margin-right: 8px;"></i> Contemporary Excellence (2021-Present)</h3>
+              <p style="margin: 0; color: var(--muted);">Today, under Sophia Blackwood-Chen, we lead the industry in
+                sustainable luxury and innovative jewelry technology.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-label="Craftsmanship traditions">
+    <section class="section" aria-label="Craftsmanship traditions"
+      style="background: radial-gradient(600px 300px at 30% 20%, rgba(214, 180, 106, 0.12), transparent 50%);">
       <div class="container">
         <div class="eyebrow">Traditions</div>
         <h2>Time-honored techniques</h2>
         <p class="kicker">Our master artisans preserve centuries-old techniques while embracing innovation to create
           truly exceptional pieces.</p>
-        <div class="grid cols-3" style="margin-top:24px;">
-          <div class="card pad" style="text-align: center;">
-            <h3>The Blackwood Method</h3>
-            <p>Our proprietary engraving technique developed in 1952, featuring microscopic precision and depth.</p>
+        <div class="craftsmanship-flow"
+          style="margin-top:48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+          <div class="craft-item"
+            style="padding: 24px; border-left: 3px solid var(--gold); transition: transform 0.3s var(--ease);">
+            <h3 style="color: var(--gold); margin-bottom: 12px;">The Blackwood Method</h3>
+            <p style="margin: 0; color: var(--muted);">Our proprietary engraving technique developed in 1952, featuring
+              microscopic precision and depth.</p>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Heritage Alloy Formulation</h3>
-            <p>Secret metal recipes passed down through generations, creating unique and durable gold formulations.</p>
+          <div class="craft-item"
+            style="padding: 24px; border-left: 3px solid var(--gold); transition: transform 0.3s var(--ease);">
+            <h3 style="color: var(--gold); margin-bottom: 12px;">Heritage Alloy Formulation</h3>
+            <p style="margin: 0; color: var(--muted);">Secret metal recipes passed down through generations, creating
+              unique and durable gold formulations.</p>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Artisanal Stone Selection</h3>
-            <p>Our gemologists personally visit mines worldwide, selecting stones that exceed industry standards.</p>
+          <div class="craft-item"
+            style="padding: 24px; border-left: 3px solid var(--gold); transition: transform 0.3s var(--ease);">
+            <h3 style="color: var(--gold); margin-bottom: 12px;">Artisanal Stone Selection</h3>
+            <p style="margin: 0; color: var(--muted);">Our gemologists personally visit mines worldwide, selecting
+              stones that exceed industry standards.</p>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Hand-Polishing Mastery</h3>
-            <p>Every piece is finished by hand using traditional tools, ensuring a luster that machines cannot
-              replicate.</p>
+          <div class="craft-item"
+            style="padding: 24px; border-left: 3px solid var(--gold); transition: transform 0.3s var(--ease);">
+            <h3 style="color: var(--gold); margin-bottom: 12px;">Hand-Polishing Mastery</h3>
+            <p style="margin: 0; color: var(--muted);">Every piece is finished by hand using traditional tools, ensuring
+              a luster that machines cannot replicate.</p>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Ethical Sourcing</h3>
-            <p>We partner directly with mines committed to fair labor and environmental stewardship, tracing every
-              stone's origin.</p>
+          <div class="craft-item"
+            style="padding: 24px; border-left: 3px solid var(--gold); transition: transform 0.3s var(--ease);">
+            <h3 style="color: var(--gold); margin-bottom: 12px;">Ethical Sourcing</h3>
+            <p style="margin: 0; color: var(--muted);">We partner directly with mines committed to fair labor and
+              environmental stewardship, tracing every stone's origin.</p>
           </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Legacy Restoration</h3>
-            <p>Our experts are trained in restoring antique jewelry, bringing family heirlooms back to life while
-              preserving their history.</p>
-          </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Bespoke Encasement</h3>
-            <p>Each piece arrives in a custom-crafted presentation box, designed to protect and display your treasure
-              for generations.</p>
-          </div>
-          <div class="card pad" style="text-align: center;">
-            <h3>Lifetime Preservation</h3>
-            <p>We provide complimentary annual inspections and professional cleaning to ensure your jewelry retains its
-              original brilliance forever.</p>
+          <div class="craft-item"
+            style="padding: 24px; border-left: 3px solid var(--gold); transition: transform 0.3s var(--ease);">
+            <h3 style="color: var(--gold); margin-bottom: 12px;">Legacy Restoration</h3>
+            <p style="margin: 0; color: var(--muted);">Our experts are trained in restoring antique jewelry, bringing
+              family heirlooms back to life while preserving their history.</p>
           </div>
         </div>
       </div>
@@ -240,8 +262,7 @@
 
     <section class="section" aria-label="Cultural impact">
       <div class="container">
-        <div class="card pad"
-          style="background:linear-gradient(135deg, rgba(214,180,106,0.18), rgba(255,255,255,0.03)); text-align: center; padding: 60px 40px;">
+        <div class="card pad" style="text-align: center; padding: 60px 40px;">
           <div class="eyebrow">Cultural Legacy</div>
           <h2>Shaping jewelry history</h2>
           <p class="kicker">Beyond creating beautiful pieces, we've influenced the entire luxury jewelry industry
