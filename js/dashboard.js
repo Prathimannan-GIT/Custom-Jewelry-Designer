@@ -27,6 +27,11 @@ function initSectionSwitching() {
   
   navItems.forEach(item => {
     item.addEventListener('click', function(e) {
+      // Skip theme toggle button
+      if (this.id === 'themeToggle') {
+        return; // Let the theme toggle handle its own click
+      }
+      
       e.preventDefault();
       
       // Get target section
@@ -42,6 +47,9 @@ function initSectionSwitching() {
       const targetElement = document.getElementById(targetSection);
       if (targetElement) {
         targetElement.classList.add('active');
+        
+        // Update header with section name
+        updateDashboardHeader(targetSection);
         
         // Scroll to top of content area for better visibility
         const dashboardContent = document.querySelector('.dashboard-content');
@@ -65,6 +73,47 @@ function initSectionSwitching() {
       }
     });
   });
+}
+
+// Function to update dashboard header based on active section
+function updateDashboardHeader(sectionId) {
+  const sectionHeaders = {
+    'overview': {
+      eyebrow: 'Workspace',
+      title: 'Welcome to your studio'
+    },
+    'designs': {
+      eyebrow: 'Projects',
+      title: 'Your Designs'
+    },
+    'messages': {
+      eyebrow: 'Communication',
+      title: 'Messages'
+    },
+    'approvals': {
+      eyebrow: 'Reviews',
+      title: 'Pending Approvals'
+    },
+    'payments': {
+      eyebrow: 'Finance',
+      title: 'Payment History'
+    },
+    'notifications': {
+      eyebrow: 'Activity',
+      title: 'Notifications'
+    }
+  };
+  
+  const headerData = sectionHeaders[sectionId];
+  if (headerData) {
+    const activeSection = document.getElementById(sectionId);
+    const sectionHeader = activeSection.querySelector('.section-header');
+    const eyebrow = sectionHeader.querySelector('.eyebrow');
+    const title = sectionHeader.querySelector('h2');
+    
+    if (eyebrow) eyebrow.textContent = headerData.eyebrow;
+    if (title) title.textContent = headerData.title;
+  }
 }
 
 function initMobileSidebar() {

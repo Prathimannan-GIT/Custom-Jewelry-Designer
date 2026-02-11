@@ -124,7 +124,7 @@ h2,
   line-height: 1.18;
   margin: 12px 0 10px;
   text-align: center;
-  font-size: clamp(22px, 4vw, 32px);
+  font-size: clamp(26px, 4.5vw, 38px);
   width: 100%;
 }
 
@@ -175,6 +175,17 @@ p {
 
 .card.pad {
   padding: 24px;
+}
+
+.card.pad h3 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.card.pad .btn {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .card-header {
@@ -692,7 +703,7 @@ html[data-theme="light"] .hero-panel .kicker {
 
 h2,
 .h2 {
-  font-size: clamp(20px, 2vw, 28px);
+  font-size: clamp(24px, 2.5vw, 34px);
 }
 
 
@@ -846,6 +857,57 @@ textarea:focus {
   cursor: pointer;
 }
 
+/* Social login brand colors */
+.btn .fa-brands.fa-google {
+  color: #4285f4; /* Google Blue */
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.btn .fa-brands.fa-facebook {
+  color: #1877f2; /* Facebook Blue */
+  font-size: 16px;
+}
+
+.btn:hover .fa-brands.fa-google {
+  color: #3367d6; /* Darker Google Blue on hover */
+  transform: scale(1.05);
+}
+
+.btn:hover .fa-brands.fa-facebook {
+  color: #166fe5; /* Darker Facebook Blue on hover */
+  transform: scale(1.05);
+}
+
+/* Terms & Conditions highlighting in register form */
+.checkbox-group label[for="agreeTerms"] {
+  color: var(--gold);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  text-decoration: underline;
+  text-decoration-color: rgba(214, 180, 106, 0.3);
+  text-underline-offset: 4px;
+}
+
+.checkbox-group label[for="agreeTerms"]:hover {
+  color: var(--gold-2);
+  text-decoration-color: var(--gold-2);
+  transform: translateY(-1px);
+}
+
+.checkbox-group input[type="checkbox"]:checked + label[for="agreeTerms"] {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label[for="agreeTerms"]::before {
+  content: "✓ ";
+  color: #22c55e;
+  font-weight: 700;
+}
+
 .helper {
   font-size: 12px;
   color: var(--muted);
@@ -990,9 +1052,10 @@ textarea:focus {
    DASHBOARD SYSTEM
    ================================ */
 
+/* Dashboard main content - remove extra padding */
 .dashboard-main {
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding: 0;
+  margin: 0;
   min-height: 100vh;
 }
 
@@ -1008,8 +1071,8 @@ textarea:focus {
 /* Sidebar */
 .sidebar {
   position: sticky;
-  top: 40px;
-  height: calc(100vh - 80px);
+  top: 0;
+  height: 100vh;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1441,6 +1504,53 @@ textarea:focus {
   text-align: right;
 }
 
+/* Contact page specific link highlighting */
+.contact-info-panel a[href^="mailto:"],
+.contact-info-panel a[href^="tel:"] {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.contact-info-panel a[href^="mailto:"]:hover,
+.contact-info-panel a[href^="tel:"]:hover {
+  background: rgba(214, 180, 106, 0.1);
+  color: var(--gold-2);
+  transform: translateY(-1px);
+}
+
+/* Social media icons in contact info */
+.contact-info-panel .social a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  flex-shrink: 0;
+}
+
+.contact-info-panel .social a:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214, 180, 106, 0.3);
+}
+
+.contact-info-panel .social a i {
+  font-size: 18px;
+}
+
 .footer .fineprint a {
   display: inline;
   padding: 0;
@@ -1448,7 +1558,7 @@ textarea:focus {
 
 .prose h2 {
   margin: 32px 0 12px;
-  font-size: 24px;
+  font-size: 28px;
   font-family: "Playfair Display", serif;
   font-weight: 600;
   color: var(--gold);
@@ -1648,7 +1758,7 @@ html[data-role="admin"] .client-only {
 }
 
 .auth-header h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 12px;
   line-height: 1.2;
 }
@@ -1799,7 +1909,10 @@ html[data-role="admin"] .client-only {
   .nav-item span,
   .theme-toggle span,
   .logout-btn span {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 1;
+    visibility: visible;
   }
 
   .stat-grid {
@@ -1863,10 +1976,11 @@ html[data-role="admin"] .client-only {
     min-height: 66vh;
   }
 
-  /* Dashboard Mobile Off-Canvas */
-  .dashboard-main {
-    padding-top: 20px;
-  }
+/* Dashboard mobile - no extra padding needed */
+.dashboard-main {
+  padding: 0;
+  margin: 0;
+}
 
   .dashboard-layout {
     grid-template-columns: 1fr;

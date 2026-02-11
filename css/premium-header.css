@@ -510,11 +510,8 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
 
 /* Spacing for fixed header */
 body.interior-page {
-  padding-top: 70px;
-}
-
-body.home-page main {
-  margin-top: 70px;
+  padding-top: 0;
+  margin: 0;
 }
 
 /* Prevent double spacing on interior pages that use both padding and main margin */
@@ -524,19 +521,19 @@ body.interior-page main {
 
 @media (max-width: 1024px) {
   body.interior-page {
-    padding-top: 70px;
+    padding-top: 0;
   }
 }
 
 @media (max-width: 768px) {
   body.interior-page {
-    padding-top: 60px;
+    padding-top: 0;
   }
 }
 
 @media (max-width: 480px) {
   body.interior-page {
-    padding-top: 60px;
+    padding-top: 0;
   }
 }
 
