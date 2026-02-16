@@ -766,15 +766,76 @@ html[data-theme="light"] .stat span {
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
 .banner .banner-inner {
   padding: 52px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .banner h1 {
   margin: 0 0 8px;
   font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.2;
+}
+
+.banner .kicker {
+  margin: 0;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+/* Banner responsive fixes */
+@media (max-width: 1024px) {
+  .banner .banner-inner {
+    padding: 40px 0;
+  }
+  
+  .banner h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    margin-bottom: 12px;
+  }
+  
+  .banner .kicker {
+    font-size: 14px;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner .banner-inner {
+    padding: 32px 20px;
+  }
+  
+  .banner h1 {
+    font-size: clamp(22px, 5vw, 30px);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  
+  .banner .kicker {
+    font-size: 13px;
+    max-width: 100%;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner .banner-inner {
+    padding: 28px 16px;
+  }
+  
+  .banner h1 {
+    font-size: clamp(20px, 6vw, 28px);
+    margin-bottom: 12px;
+  }
+  
+  .banner .kicker {
+    font-size: 12px;
+  }
 }
 
 .form {
@@ -2319,6 +2380,130 @@ html[data-role="admin"] .client-only {
   .preview-meta .badge {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Button centering fixes */
+.card-footer {
+  justify-content: center !important;
+  text-align: center;
+}
+
+.card-footer .btn {
+  margin: 0 auto;
+  display: inline-flex;
+}
+
+.hero-actions {
+  justify-content: center !important;
+  text-align: center;
+}
+
+.hero-actions .btn {
+  margin: 0;
+  display: inline-flex;
+}
+
+/* Login page text alignment fixes */
+@media (max-width: 1024px) {
+  .auth-header {
+    text-align: center !important;
+  }
+  
+  .auth-header h2 {
+    text-align: center !important;
+  }
+  
+  .auth-header p {
+    text-align: center !important;
+  }
+  
+  .auth-form {
+    text-align: left;
+  }
+  
+  .auth-form .field {
+    text-align: left;
+  }
+  
+  .auth-form .field label {
+    text-align: left;
+  }
+  
+  .auth-form .split {
+    text-align: left;
+  }
+  
+  .auth-footer {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-header {
+    text-align: center !important;
+  }
+  
+  .auth-header h2 {
+    text-align: center !important;
+    font-size: 1.5rem;
+  }
+  
+  .auth-header p {
+    text-align: center !important;
+  }
+  
+  .auth-form {
+    text-align: left;
+  }
+  
+  .auth-form .field {
+    text-align: left;
+  }
+  
+  .auth-form .field label {
+    text-align: left;
+  }
+  
+  .auth-form .split {
+    text-align: left;
+  }
+  
+  .auth-footer {
+    text-align: center !important;
+  }
+}
+
+/* Service cards responsive fixes */
+@media (max-width: 1024px) {
+  .services-page .grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-page .grid.cols-3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .services-page .card.pad {
+    padding: 20px;
+  }
+  
+  .services-page .card.pad .media {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page .card.pad {
+    padding: 16px;
+  }
+  
+  .services-page .card.pad .media {
+    height: 120px;
   }
 }
 

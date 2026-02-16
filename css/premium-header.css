@@ -425,6 +425,19 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
     width: 32px;
     height: 32px;
   }
+
+  /* Tablet mobile menu adjustments */
+  .mobile-menu-header {
+    padding: 1.2rem;
+    gap: 10px;
+  }
+
+  .mobile-menu-header .brand-text {
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+  }
 }
 
 /* Mobile View */
@@ -451,16 +464,24 @@ html[data-theme="dark"] .theme-toggle i.fa-sun {
     right: -280px;
   }
 
-  .brand-text {
-    font-size: 1rem;
+  .mobile-menu-header {
+    padding: 1rem;
+    gap: 8px;
   }
 
-  .brand-badge {
+  .mobile-menu-header .brand-text {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+  }
+
+  .mobile-menu-header .brand-badge {
     width: 36px;
     height: 36px;
   }
 
-  .brand-badge i {
+  .mobile-menu-header .brand-badge i {
     font-size: 18px;
   }
 }
