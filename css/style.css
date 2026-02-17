@@ -53,12 +53,26 @@ body {
   margin: 0;
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: 15px;
+  padding-top: 70px; /* Account for fixed header */
   background: radial-gradient(1000px 500px at 20% -10%, rgba(214, 180, 106, 0.16), transparent 55%),
     radial-gradient(800px 400px at 90% 0%, rgba(214, 180, 106, 0.10), transparent 60%),
     var(--bg);
   color: var(--text);
   line-height: 1.55;
   overflow-x: hidden;
+}
+
+/* Responsive body padding for fixed header */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px; /* Mobile header height */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 60px; /* Small mobile header height */
+  }
 }
 
 img {
@@ -768,73 +782,191 @@ html[data-theme="light"] .stat span {
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
+  padding-top: 70px; /* Account for fixed header */
 }
 
 .banner .banner-inner {
   padding: 52px 0;
   position: relative;
   z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner h1 {
   margin: 0 0 8px;
   font-size: clamp(30px, 3vw, 42px);
   line-height: 1.2;
+  text-align: center;
 }
 
 .banner .kicker {
-  margin: 0;
+  margin: 0 auto 24px;
   line-height: 1.5;
   max-width: 600px;
+  text-align: center;
+}
+
+.banner .eyebrow {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Banner button centering */
+.banner .hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.banner .hero-actions .btn {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Banner responsive fixes */
 @media (max-width: 1024px) {
+  .banner {
+    padding-top: 70px; /* Tablet header height */
+  }
+  
   .banner .banner-inner {
-    padding: 40px 0;
+    padding: 40px 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
   
   .banner h1 {
     font-size: clamp(26px, 4vw, 36px);
     margin-bottom: 12px;
+    text-align: center;
   }
   
   .banner .kicker {
     font-size: 14px;
     max-width: 500px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+  
+  .banner .eyebrow {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  
+  .banner .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .banner .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
+  .banner {
+    padding-top: 60px; /* Mobile header height */
+  }
+  
   .banner .banner-inner {
-    padding: 32px 20px;
+    padding: 32px 16px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
   
   .banner h1 {
     font-size: clamp(22px, 5vw, 30px);
     margin-bottom: 16px;
     line-height: 1.3;
+    text-align: center;
   }
   
   .banner .kicker {
     font-size: 13px;
     max-width: 100%;
     line-height: 1.6;
+    margin: 0 auto 18px;
+    text-align: center;
+  }
+  
+  .banner .eyebrow {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .banner .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+  }
+  
+  .banner .hero-actions .btn {
+    width: 100%;
+    max-width: 240px;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
+  .banner {
+    padding-top: 60px; /* Small mobile header height */
+  }
+  
   .banner .banner-inner {
-    padding: 28px 16px;
+    padding: 28px 12px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
   
   .banner h1 {
     font-size: clamp(20px, 6vw, 28px);
     margin-bottom: 12px;
+    text-align: center;
   }
   
   .banner .kicker {
     font-size: 12px;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+  
+  .banner .eyebrow {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  .banner .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+  }
+  
+  .banner .hero-actions .btn {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+    font-size: 14px;
   }
 }
 
@@ -2383,6 +2515,41 @@ html[data-role="admin"] .client-only {
   }
 }
 
+/* Home page specific hero button centering */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .home-page .hero-actions {
+    justify-content: center !important;
+    text-align: center;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .home-page .hero-actions .btn {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home-page .hero-actions {
+    justify-content: center !important;
+    text-align: center;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .home-page .hero-actions .btn {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /* Button centering fixes */
 .card-footer {
   justify-content: center !important;
@@ -2475,6 +2642,92 @@ html[data-role="admin"] .client-only {
 }
 
 /* Service cards responsive fixes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .services-page .grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 24px auto 0;
+  }
+  
+  /* Show only first 4 cards in tablet view */
+  .services-page .grid.cols-3 .card:nth-child(n+5) {
+    display: none;
+  }
+  
+  /* Force all cards to have exact same height */
+  .services-page .grid.cols-3 .card {
+    height: 480px; /* Fixed height for all cards */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ensure all card content fits uniformly */
+  .services-page .grid.cols-3 .card.pad {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  /* Fixed media height for all cards */
+  .services-page .grid.cols-3 .card.pad .media {
+    height: 180px; /* Fixed image height */
+    width: 100%;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+  
+  /* Fixed content area */
+  .services-page .grid.cols-3 .card.pad h3 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    height: auto;
+    flex-shrink: 0;
+  }
+  
+  .services-page .grid.cols-3 .card.pad p {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    flex-grow: 1; /* Allow text area to grow */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Fixed badges area */
+  .services-page .grid.cols-3 .card.pad .preview-meta {
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  
+  .services-page .grid.cols-3 .card.pad .preview-meta .badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  
+  /* Fixed button area */
+  .services-page .grid.cols-3 .card.pad .btn {
+    align-self: center;
+    margin-top: auto;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    flex-shrink: 0;
+  }
+}
+
 @media (max-width: 1024px) {
   .services-page .grid.cols-3 {
     grid-template-columns: repeat(2, 1fr);
@@ -2543,3 +2796,83 @@ html[data-role="admin"] .client-only {
     min-height: 44px;
   }
 }
+/* Section Title */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ===== GRID FIX (No Overlap) ===== */
+.necklaces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 24px;
+}
+
+/* ===== CARD ===== */
+.necklace-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  height: 100%;
+}
+
+.necklace-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== IMAGE (Equal Height for All) ===== */
+.necklace-media {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===== CARD CONTENT ===== */
+.necklace-body {
+  flex: 1;
+  padding: 22px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.necklace-body h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.necklace-body p {
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Button Center */
+.necklace-body .btn {
+  align-self: center;
+}
+
+/* ===== RESPONSIVE FIX ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .necklaces-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .necklaces-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

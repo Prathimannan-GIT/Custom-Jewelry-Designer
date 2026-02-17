@@ -116,22 +116,8 @@ class PremiumHeader {
   }
 
   handleScroll() {
-    let lastScrollTop = 0;
-    const header = document.querySelector('.premium-header');
-
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (header) {
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-          header.style.transform = 'translateY(-100%)';
-        } else {
-          header.style.transform = 'translateY(0)';
-        }
-      }
-
-      lastScrollTop = scrollTop;
-    });
+    // Header is now fixed - no scroll behavior needed
+    // Keeping this function for potential future enhancements
   }
 
   handleResize() {
