@@ -54,11 +54,11 @@ class PremiumHeader {
 
     window.addEventListener('resize', () => this.handleResize());
 
-    // Theme Toggle Event
-    const toggleBtn = document.querySelector('.theme-toggle');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => this.toggleTheme());
-    }
+    // Theme Toggle Event (bind to all toggle buttons)
+    const toggleBtns = document.querySelectorAll('.theme-toggle');
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => this.toggleTheme());
+    });
   }
 
   toggleMobileMenu() {

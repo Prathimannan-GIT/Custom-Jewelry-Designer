@@ -2855,10 +2855,11 @@ html[data-role="admin"] .client-only {
 .necklace-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   transition: 0.3s ease;
   height: 100%;
 }
@@ -2893,7 +2894,7 @@ html[data-role="admin"] .client-only {
   margin-bottom: 20px;
   flex-grow: 1;
   font-size: 15px;
-  color: #555;
+  color: var(--muted);
 }
 
 /* Button Center */
