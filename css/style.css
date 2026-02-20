@@ -172,16 +172,34 @@ p {
 }
 
 .grid.cols-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .grid.cols-3 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: stretch;
 }
 
 .grid.cols-4 {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+
+  .grid.cols-2,
+  .grid.cols-3,
+  .grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+
+  .grid.cols-2,
+  .grid.cols-3,
+  .grid.cols-4 {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -1617,18 +1635,6 @@ textarea:focus {
     justify-content: center;
   }
 
-  .footer .fineprint {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    justify-items: center;
-  }
-
-  .footer .fineprint> :first-child,
-  .footer .fineprint> :nth-child(2),
-  .footer .fineprint> :last-child {
-    justify-self: center;
-    text-align: center;
-  }
 }
 
 .footer h3 {
@@ -1690,26 +1696,23 @@ textarea:focus {
 }
 
 .footer .fineprint {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 14px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 14px 0 20px;
+  padding: 24px 0;
   color: var(--muted);
   font-size: 13px;
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
 }
 
-.footer .fineprint> :first-child {
-  justify-self: start;
-}
-
-.footer .fineprint> :nth-child(2) {
-  justify-self: center;
-}
-
-.footer .fineprint> :last-child {
-  justify-self: end;
-  text-align: right;
+.footer .fineprint>div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 24px;
+  text-align: center;
 }
 
 /* Contact page specific link highlighting */
@@ -2606,6 +2609,26 @@ html[data-role="admin"] .client-only {
 .hero-actions .btn {
   margin: 0;
   display: inline-flex;
+}
+
+/* Specific CTA Centering for bottom cards */
+.card.pad .hero-actions,
+.cta-section .hero-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: 100% !important;
+  flex-wrap: wrap !important;
+  margin-top: 32px !important;
+}
+
+.card.pad .hero-actions .btn,
+.cta-section .hero-actions .btn {
+  margin: 0 !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  width: auto !important;
 }
 
 /* Login page text alignment fixes */

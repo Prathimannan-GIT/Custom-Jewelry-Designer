@@ -1,5 +1,5 @@
 // Dashboard JavaScript Functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Initialize dashboard functionality
   initDashboard();
 });
@@ -7,16 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
 function initDashboard() {
   // Section switching functionality
   initSectionSwitching();
-  
+
   // Mobile sidebar toggle
   initMobileSidebar();
-  
+
   // Role switcher
   initRoleSwitcher();
-  
+
   // Theme toggle
   initThemeToggle();
-  
+
   // Interactive elements
   initInteractiveElements();
 }
@@ -24,39 +24,39 @@ function initDashboard() {
 function initSectionSwitching() {
   const navItems = document.querySelectorAll('.nav-item');
   const sections = document.querySelectorAll('.dashboard-section');
-  
+
   navItems.forEach(item => {
-    item.addEventListener('click', function(e) {
+    item.addEventListener('click', function (e) {
       // Skip theme toggle button
       if (this.id === 'themeToggle') {
         return; // Let the theme toggle handle its own click
       }
-      
-      e.preventDefault();
-      
-      // Get target section
+
+      // Skip links that don't have a data-section attribute
       const targetSection = this.getAttribute('data-section');
       if (!targetSection) return;
-      
+
+      e.preventDefault();
+
       // Remove active class from all nav items and sections
       navItems.forEach(nav => nav.classList.remove('active'));
       sections.forEach(section => section.classList.remove('active'));
-      
+
       // Add active class to clicked nav item and corresponding section
       this.classList.add('active');
       const targetElement = document.getElementById(targetSection);
       if (targetElement) {
         targetElement.classList.add('active');
-        
+
         // Update header with section name
         updateDashboardHeader(targetSection);
-        
+
         // Scroll to top of content area for better visibility
         const dashboardContent = document.querySelector('.dashboard-content');
         if (dashboardContent) {
           dashboardContent.scrollTop = 0;
         }
-        
+
         // Smooth scroll to section if it's not immediately visible
         setTimeout(() => {
           targetElement.scrollIntoView({
@@ -66,7 +66,7 @@ function initSectionSwitching() {
           });
         }, 100);
       }
-      
+
       // Close mobile sidebar after selection
       if (window.innerWidth <= 768) {
         closeMobileSidebar();
@@ -103,14 +103,14 @@ function updateDashboardHeader(sectionId) {
       title: 'Notifications'
     }
   };
-  
+
   const headerData = sectionHeaders[sectionId];
   if (headerData) {
     const activeSection = document.getElementById(sectionId);
     const sectionHeader = activeSection.querySelector('.section-header');
     const eyebrow = sectionHeader.querySelector('.eyebrow');
     const title = sectionHeader.querySelector('h2');
-    
+
     if (eyebrow) eyebrow.textContent = headerData.eyebrow;
     if (title) title.textContent = headerData.title;
   }
@@ -120,19 +120,19 @@ function initMobileSidebar() {
   const mobileToggle = document.getElementById('mobileDashToggle');
   const sidebar = document.getElementById('dashSidebar');
   const overlay = document.getElementById('dashOverlay');
-  
+
   if (mobileToggle && sidebar && overlay) {
-    mobileToggle.addEventListener('click', function() {
+    mobileToggle.addEventListener('click', function () {
       sidebar.classList.toggle('open');
       overlay.classList.toggle('active');
     });
-    
-    overlay.addEventListener('click', function() {
+
+    overlay.addEventListener('click', function () {
       closeMobileSidebar();
     });
-    
+
     // Close sidebar when clicking outside on desktop
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       if (window.innerWidth > 768) {
         if (!sidebar.contains(e.target) && !mobileToggle.contains(e.target)) {
           // Optional: Add any desktop click-outside behavior here
@@ -145,7 +145,7 @@ function initMobileSidebar() {
 function closeMobileSidebar() {
   const sidebar = document.getElementById('dashSidebar');
   const overlay = document.getElementById('dashOverlay');
-  
+
   if (sidebar && overlay) {
     sidebar.classList.remove('open');
     overlay.classList.remove('active');
@@ -156,17 +156,17 @@ function initRoleSwitcher() {
   const roleSwitch = document.getElementById('roleSwitch');
   const roleLabel = document.getElementById('roleLabel');
   const htmlElement = document.documentElement;
-  
+
   if (roleSwitch && roleLabel) {
-    roleSwitch.addEventListener('change', function() {
+    roleSwitch.addEventListener('change', function () {
       const isDesigner = this.checked;
-      
+
       // Update label
       roleLabel.textContent = isDesigner ? 'Designer Workspace' : 'Client Workspace';
-      
+
       // Update data-role attribute
       htmlElement.setAttribute('data-role', isDesigner ? 'designer' : 'client');
-      
+
       // Optional: Add role-specific content changes
       updateContentForRole(isDesigner);
     });
@@ -177,13 +177,13 @@ function updateContentForRole(isDesigner) {
   // This function can be expanded to show/hide role-specific content
   const statCards = document.querySelectorAll('.stat-card');
   const statValues = document.querySelectorAll('.stat-value');
-  
+
   if (isDesigner) {
     // Designer-specific stats
     if (statValues[0]) statValues[0].textContent = '8'; // Active Designs
     if (statValues[1]) statValues[1].textContent = '12'; // Messages
     if (statValues[2]) statValues[2].textContent = '$15,230.00'; // Earnings
-    
+
     // Update other stats if needed
     if (statValues[3]) statValues[3].textContent = '5'; // Pending Reviews
     if (statValues[4]) statValues[4].textContent = '47'; // Completed Projects
@@ -193,7 +193,7 @@ function updateContentForRole(isDesigner) {
     if (statValues[0]) statValues[0].textContent = '3'; // Active Designs
     if (statValues[1]) statValues[1].textContent = '5'; // Messages
     if (statValues[2]) statValues[2].textContent = '$2,450.00'; // Account Balance
-    
+
     // Update other stats if needed
     if (statValues[3]) statValues[3].textContent = '2'; // Pending Approvals
     if (statValues[4]) statValues[4].textContent = '12'; // Completed Projects
@@ -204,29 +204,29 @@ function updateContentForRole(isDesigner) {
 function initThemeToggle() {
   const themeToggle = document.getElementById('themeToggle');
   const htmlElement = document.documentElement;
-  
+
   if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
+    themeToggle.addEventListener('click', function () {
       const currentTheme = htmlElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
+
       // Update theme
       htmlElement.setAttribute('data-theme', newTheme);
-      
+
       // Update icon
       const icon = this.querySelector('i');
       if (icon) {
         icon.className = newTheme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
       }
-      
+
       // Save preference to localStorage
       localStorage.setItem('theme', newTheme);
     });
-    
+
     // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'dark';
     htmlElement.setAttribute('data-theme', savedTheme);
-    
+
     // Update icon based on saved theme
     const icon = themeToggle.querySelector('i');
     if (icon) {
@@ -239,55 +239,55 @@ function initInteractiveElements() {
   // Design card clicks
   const designCards = document.querySelectorAll('.design-card');
   designCards.forEach(card => {
-    card.addEventListener('click', function() {
+    card.addEventListener('click', function () {
       // Add click animation
       this.style.transform = 'scale(0.98)';
       setTimeout(() => {
         this.style.transform = '';
       }, 150);
-      
+
       // Optional: Navigate to design details
       console.log('Design card clicked:', this.querySelector('.design-title').textContent);
     });
   });
-  
+
   // Message item clicks
   const messageItems = document.querySelectorAll('.message-item');
   messageItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       // Remove unread indicator
       const unreadIndicator = this.querySelector('.unread-indicator');
       if (unreadIndicator) {
         unreadIndicator.style.display = 'none';
       }
-      
+
       // Optional: Open message modal or navigate
       console.log('Message clicked:', this.querySelector('.message-sender').textContent);
     });
   });
-  
+
   // Notification item clicks
   const notificationItems = document.querySelectorAll('.notification-item');
   notificationItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       // Remove unread state
       this.classList.remove('unread');
-      
+
       // Optional: Handle notification action
       console.log('Notification clicked:', this.querySelector('.notification-title').textContent);
     });
   });
-  
+
   // Approval button clicks
   const approvalButtons = document.querySelectorAll('.approval-actions .btn');
   approvalButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
       e.stopPropagation();
-      
+
       const isApprove = this.classList.contains('btn-primary');
       const approvalCard = this.closest('.approval-card');
       const title = approvalCard.querySelector('h4').textContent;
-      
+
       if (isApprove) {
         // Handle approval
         console.log('Approved:', title);
@@ -301,40 +301,40 @@ function initInteractiveElements() {
       }
     });
   });
-  
+
   // Add hover effects to stat cards
   const statCards = document.querySelectorAll('.stat-card');
   statCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
       this.style.transform = 'translateY(-4px)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
       this.style.transform = 'translateY(-2px)';
     });
   });
 }
 
 // Handle window resize
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   if (window.innerWidth > 768) {
     closeMobileSidebar();
   }
 });
 
 // Keyboard navigation
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
   // Escape key closes mobile sidebar
   if (e.key === 'Escape') {
     closeMobileSidebar();
   }
-  
+
   // Arrow key navigation for menu items (optional enhancement)
   if (e.altKey) {
     const navItems = document.querySelectorAll('.nav-item');
     const activeItem = document.querySelector('.nav-item.active');
     const currentIndex = Array.from(navItems).indexOf(activeItem);
-    
+
     if (e.key === 'ArrowDown' && currentIndex < navItems.length - 1) {
       navItems[currentIndex + 1].click();
     } else if (e.key === 'ArrowUp' && currentIndex > 0) {
@@ -348,18 +348,18 @@ function initTooltips() {
   // Add tooltip functionality if needed
   const tooltipElements = document.querySelectorAll('[data-tooltip]');
   tooltipElements.forEach(element => {
-    element.addEventListener('mouseenter', function() {
+    element.addEventListener('mouseenter', function () {
       const tooltip = document.createElement('div');
       tooltip.className = 'tooltip';
       tooltip.textContent = this.getAttribute('data-tooltip');
       document.body.appendChild(tooltip);
-      
+
       const rect = this.getBoundingClientRect();
       tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
       tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
     });
-    
-    element.addEventListener('mouseleave', function() {
+
+    element.addEventListener('mouseleave', function () {
       const tooltip = document.querySelector('.tooltip');
       if (tooltip) {
         tooltip.remove();
@@ -382,7 +382,7 @@ function debounce(func, wait) {
 }
 
 // Debounced resize handler
-const debouncedResize = debounce(function() {
+const debouncedResize = debounce(function () {
   // Handle resize-specific logic
   if (window.innerWidth <= 768) {
     // Mobile-specific adjustments
@@ -395,19 +395,19 @@ window.addEventListener('resize', debouncedResize);
 
 // Export functions for potential external use
 window.Dashboard = {
-  switchSection: function(sectionId) {
+  switchSection: function (sectionId) {
     const navItem = document.querySelector(`[data-section="${sectionId}"]`);
     if (navItem) {
       navItem.click();
     }
   },
-  toggleTheme: function() {
+  toggleTheme: function () {
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
       themeToggle.click();
     }
   },
-  toggleRole: function() {
+  toggleRole: function () {
     const roleSwitch = document.getElementById('roleSwitch');
     if (roleSwitch) {
       roleSwitch.checked = !roleSwitch.checked;
