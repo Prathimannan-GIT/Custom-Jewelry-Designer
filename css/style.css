@@ -41,17 +41,80 @@ html[data-theme="light"] {
 }
 
 html[data-theme="light"] body {
-  background: linear-gradient(180deg, #fbfaf7 0%, #f4f1ea 100%);
+  background: #ffffff;
+  color: var(--gold);
 }
 
 html[data-theme="light"] .process-step {
-  background: rgba(18, 18, 20, 0.02);
-  border: 1px solid rgba(18, 18, 20, 0.08);
+  background: rgba(214, 180, 106, 0.05);
+  border: 1px solid rgba(214, 180, 106, 0.2);
+  color: var(--gold);
 }
 
 html[data-theme="light"] .featured-item {
-  background: rgba(18, 18, 20, 0.02);
-  border: 1px solid rgba(18, 18, 20, 0.08);
+  background: rgba(214, 180, 106, 0.05);
+  border: 1px solid rgba(214, 180, 106, 0.2);
+  color: var(--gold);
+}
+
+/* Light mode sophisticated color pattern */
+html[data-theme="light"] .home-page h1 {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .home-page h2 {
+  color: #121214 !important;
+}
+
+html[data-theme="light"] .home-page h3 {
+  color: rgba(214, 180, 106, 0.8) !important;
+}
+
+html[data-theme="light"] .home-page p,
+html[data-theme="light"] .home-page .kicker {
+  color: rgba(18, 18, 20, 0.7) !important;
+}
+
+html[data-theme="light"] .home-page .eyebrow {
+  color: var(--gold) !important;
+}
+
+html[data-theme="light"] .home-page .stat strong {
+  color: var(--gold) !important;
+}
+
+html[data-theme="light"] .home-page .stat span {
+  color: rgba(18, 18, 20, 0.6) !important;
+}
+
+/* Ensure all text follows sophisticated color pattern on index page */
+.home-page h1 {
+  color: var(--ivory) !important;
+}
+
+.home-page h2 {
+  color: var(--ivory) !important;
+}
+
+.home-page h3 {
+  color: rgba(214, 180, 106, 0.9) !important;
+}
+
+.home-page p,
+.home-page .kicker {
+  color: var(--muted) !important;
+}
+
+.home-page .eyebrow {
+  color: var(--gold) !important;
+}
+
+.home-page .stat strong {
+  color: var(--gold) !important;
+}
+
+.home-page .stat span {
+  color: rgba(244, 241, 234, 0.7) !important;
 }
 
 * {
@@ -69,8 +132,8 @@ body {
   font-size: 15px;
   padding-top: 70px;
   /* Account for fixed header */
-  background: linear-gradient(180deg, #0f0f10 0%, #1a1a1c 100%);
-  color: var(--text);
+  background: #000000;
+  color: var(--gold);
   line-height: 1.55;
   overflow-x: hidden;
 }
@@ -509,34 +572,10 @@ body.nav-open .mobile-drawer {
   position: relative;
   overflow: hidden;
   padding: 100px 0;
-  background: var(--bg);
+  background: transparent;
 }
 
-/* Luxury Spotlights */
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 60vw;
-  height: 60vw;
-  border-radius: 50%;
-  filter: blur(140px);
-  z-index: 1;
-  opacity: 0.12;
-  pointer-events: none;
-}
-
-.hero::before {
-  top: -20%;
-  left: -10%;
-  background: var(--gold);
-}
-
-.hero::after {
-  bottom: -20%;
-  right: -10%;
-  background: var(--gold-2);
-}
+/* Hero spotlights removed */
 
 .hero-inner {
   width: min(var(--max), calc(100% - 40px));
@@ -785,26 +824,28 @@ h3 {
   text-align: center;
   padding: 24px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(214, 180, 106, 0.05);
+  border: 1px solid rgba(214, 180, 106, 0.2);
   transition: transform 0.3s var(--ease);
+  color: var(--gold);
 }
 
 .featured-item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(214, 180, 106, 0.05);
+  border: 1px solid rgba(214, 180, 106, 0.2);
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform 0.3s var(--ease);
+  color: var(--gold);
 }
 
 .stat {
   padding: 24px;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(214, 180, 106, 0.2);
+  background: rgba(214, 180, 106, 0.05);
   transition: transform 0.3s var(--ease);
+  color: var(--gold);
 }
 
 .stat:hover {
