@@ -209,6 +209,23 @@ input:checked + .toggle-slider:before {
   color: var(--text);
 }
 
+/* Theme Toggle Icon Visibility */
+html[data-theme="light"] .theme-toggle i.fa-moon {
+  display: block !important;
+}
+
+html[data-theme="light"] .theme-toggle i.fa-sun {
+  display: none !important;
+}
+
+html[data-theme="dark"] .theme-toggle i.fa-moon {
+  display: none !important;
+}
+
+html[data-theme="dark"] .theme-toggle i.fa-sun {
+  display: block !important;
+}
+
 .new-design-btn {
   background: var(--gold);
   color: var(--black);
